@@ -1,0 +1,114 @@
+body {
+margin:0;
+}
+
+a {
+text-decoration:none;
+color:rgb(33,77,250);
+}
+
+#maindiv {
+border:1px #ddd solid;
+min-height:99.8%;
+background-color:#eee;
+width: 100%;
+display: inline-block;
+}
+#header-bar {
+display: block;
+min-height:21px;
+border:1px #ddd solid;
+}
+#admin-name {
+display: inline-block;
+border:1px rgba(221,221,221,0.9) solid;
+width:136px;
+float:left;
+margin:0px 0px;
+box-shadow:0px 0px 10px #ddd;
+text-align:center;
+background-color:darkgreen;
+color:white;
+padding:0px 33px;
+}
+#menuleft {
+min-height:150px;
+border:1px #ddd solid;
+width:200px;
+float:left;
+text-align:center;
+display:inline-block;
+float: left;
+border-bottom: 3px darkgreen solid;
+border-radius: 9px;
+}
+
+#menuleft ul {
+list-style:none;
+padding:0px;
+margin:0px;
+}
+
+#menuleft li {
+border:1px #ddd solid;
+padding:0px 12px;
+font-size: 21px;
+transition: 0.9s;
+}
+
+#menuleft li:hover {
+background-color:darkgreen;
+color:#fff;
+}
+
+#maincenter-cat {
+display:inline-block;
+padding:10px 20px;
+margin: 0px 10px;
+border: 1px #ddd solid;
+}
+#maincenter-post{
+display:inline-block;
+padding:10px 20px;
+margin: 0px 10px;
+border: 1px #ddd solid;
+width: 60%;    
+}
+#exitbtn {
+display: inline-block;
+min-width:33px;
+width:70px;
+float:right;
+padding:0px 21px;
+background-color:darkred;
+text-align:center;
+-webkit-transition:all 0.5s;
+}
+
+#exitbtn a {
+color:#FFFFFF;
+text-decoration:none;
+-webkit-transition:all 0.5s;
+}
+
+#exitbtn:hover {
+color:#FFFFFF;
+background-color:#C43100;
+-webkit-transition:all 0.5s;
+}
+#footer {
+    display: block;
+    width: 100%;
+    height: 21px;
+    background-color: rgb(66,66,66);
+    color: rgb(243,243,243);
+    text-align: center;
+}
+#formcat {
+    border: 1px #888 solid;
+    padding: 5px;
+    margin: 5px;
+}
+#textinput {
+    width: 500px;
+}
