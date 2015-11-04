@@ -21,7 +21,7 @@ ini_set('display_errors', 'On');
 // Class for coonet to DataBase
 $hostname = "localhost";
 $usernamehost = "root";
-$passwordhost = "";
+$passwordhost = "ju1bNELAzq1k";
 $databasename = "samcmsdb";
 
 // Create query to connect to DB ,  We use mysqli
