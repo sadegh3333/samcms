@@ -47,7 +47,7 @@ $getpost = $pst->getpost($id);
 <meta charset="utf-8" />
 <link rel="stylesheet" href="style.css" />
 <!-- TinyMCE -->
-<script type="text/javascript" src="http://localhost/is-include/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="../is-include/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
 tinymce.init({
     selector: "textarea",

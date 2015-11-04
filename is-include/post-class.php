@@ -69,7 +69,7 @@ class post
         {
             $id = $res['id'];
             $title = $res['title'];
-            $total = ('<p><a href="/is-admin/edit-post.php?id=' . $id . '">' .
+            $total = ('<p><a href="../is-admin/edit-post.php?id=' . $id . '">' .
                 $id . '. ' . $title . '<a></p>');
             echo ($total);
         }
