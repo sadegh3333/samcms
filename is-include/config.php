@@ -15,8 +15,10 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $settime = "Asia/Tehran";
 date_default_timezone_set($settime);
 
-// Class for coonet to DataBase
+// add display error on
+ini_set('display_errors', 'On');
 
+// Class for coonet to DataBase
 $hostname = "localhost";
 $usernamehost = "root";
 $passwordhost = "";
