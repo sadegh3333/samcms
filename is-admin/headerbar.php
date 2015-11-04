@@ -10,5 +10,5 @@
 ?>
 <div id="header-bar"> 
 <div id="admin-name"> Welcome <?php echo ($_SESSION['username']); ?> </div>
-<div id="exitbtn"><a href="/is-admin/login.php?logout=true">  logout </a></div>
+<div id="exitbtn"><a href="../is-admin/login.php?logout=true">  logout </a></div>
 </div>
