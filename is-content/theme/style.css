@@ -100,9 +100,7 @@ a {
     border-radius: 0px 0px 0px 50px;
 }
 #latestnews {
-    float: left;
-    width: 300px;
-    height: auto;
+
     border: 1px rgba(17, 17, 17, 0.09) solid;
     direction: rtl;
     font-family: B titr;
@@ -115,8 +113,7 @@ a {
 }
 #latestnews li {
     border-bottom:1px rgba(17, 17, 17, 0.09) solid;
-    height: 40px;
-    width: 93%;
+
     padding: 10px 10px;
 }
 #latestnews li:hover {
@@ -132,15 +129,9 @@ a {
     height: auto;
 }
 #mainpage {
-    height: auto;
-    width: 1024px;
     border-left: 1px rgba(17, 17, 17, 0.09) solid;
 }
-#mainpage1 {
-    height: auto;
-    width: 720px;
-    
-}
+
 #post {
     border-bottom: 1px rgba(17, 17, 17, 0.09) solid;
     border-left: 1px rgba(17, 17, 17, 0.09) solid;
