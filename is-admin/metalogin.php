@@ -9,6 +9,13 @@
 ?>
 <html>
 <head>
+<?php 
+
+require_once('../is-include/config.php');
+require('../is-include/function.php');
+require('../is-include/jdf.php');
+ ?>
+<?php Get_bootstarp(); ?>
 	<style type="text/css">
 		#inputbox {
 			border:1px #DDDDDD solid;

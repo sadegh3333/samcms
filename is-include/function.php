@@ -6,24 +6,38 @@
  * @since 2013 January-February
  * @version 0.5.0 Beta
  */
+
 require_once('config.php');
 // safe function
 function safe($value,$type='0'){
-    global $dbc;
-$value = trim($value);
-$value = str_replace("|nline|","",$value);
-$value = str_replace("|rnline|","",$value);
-$value = str_replace("\r\n","|rnline|",$value);
-$value = str_replace("\n","|nline|",$value);
+	global $dbc;
+	$value = trim($value);
+	$value = str_replace("|nline|","",$value);
+	$value = str_replace("|rnline|","",$value);
+	$value = str_replace("\r\n","|rnline|",$value);
+	$value = str_replace("\n","|nline|",$value);
 //$value = mysqli_real_escape_string($dbc->connection, $value );
-$value = str_replace("|nline|","\n",$value);
-$value = str_replace("|rnline|","\r\n",$value);
-if($type != '1')
-{
-$value		= htmlspecialchars($value);
-$value		= strip_tags($value);
-$value 		= str_replace(array("<",">","'","&#1740;","&amp;","&#1756;"),array("&lt;","&gt;","&#39;","&#1610;","&","&#1610;"),$value);
+	$value = str_replace("|nline|","\n",$value);
+	$value = str_replace("|rnline|","\r\n",$value);
+	if($type != '1')
+	{
+		$value		= htmlspecialchars($value);
+		$value		= strip_tags($value);
+		$value 		= str_replace(array("<",">","'","&#1740;","&amp;","&#1756;"),array("&lt;","&gt;","&#39;","&#1610;","&","&#1610;"),$value);
+	}
+	return $value;
 }
-return $value;
+
+/* Function for get bootsrap files */
+function Get_bootstarp(){
+global $Root;
+	?>
+	<!-- add js file -->
+	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.js';  ?>"></script>
+	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>"></script>
+	<!-- add css file -->
+	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/js/bootstrap.js'; ?>">
+	<?php	
 }
 ?>

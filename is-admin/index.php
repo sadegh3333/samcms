@@ -15,6 +15,7 @@ if(!($_SESSION['username'])){
     header('location: metalogin.php');
 }
 
+Get_bootstarp();
 ?>
 <!doctype html >
 <html> 

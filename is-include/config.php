@@ -7,8 +7,8 @@
  * @version 0.2.0 Beta
  */
 
-
-
+global $Root;
+$Root = $_SERVER['DOCUMENT_ROOT'];
 require_once ('db-class.php');
 // Get host and ip
 $host = $_SERVER['HTTP_HOST'];
