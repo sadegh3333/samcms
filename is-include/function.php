@@ -2,9 +2,9 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2013  February
- * @since 2013 January-February
- * @version 0.5.0 Beta
+ * @copyright 2015  Dec
+ * @since 2013 to Dec 2015
+ * @version 0.5.1 Stable
  */
 
 require_once('config.php');
@@ -32,10 +32,10 @@ function safe($value,$type='0'){
 function Get_bootstarp(){
 global $Root;
 	?>
-	<!-- add js file -->
+	<!-- add js bootstrap files -->
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.js';  ?>"></script>
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>"></script>
-	<!-- add css file -->
+	<!-- add css bootstrap files -->
 	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/js/bootstrap.js'; ?>">
 	<?php	
