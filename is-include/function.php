@@ -32,12 +32,12 @@ function safe($value,$type='0'){
 function Get_bootstarp(){
 global $Root;
 	?>
+	<!-- add css bootstrap files -->
+	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/bootstrap.css'; ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/bootstrap.min.css'; ?>">
 	<!-- add js bootstrap files -->
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.js';  ?>"></script>
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>"></script>
-	<!-- add css bootstrap files -->
-	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/js/bootstrap.js'; ?>">
 	<?php	
 }
 ?>

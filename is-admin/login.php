@@ -12,17 +12,19 @@ session_start();
 require_once('../is-include/config.php');
 require_once('../is-include/user-class.php');
 require('../is-include/function.php');
-if(isset($_GET['username']))$username = safe($_GET['username'],1);
-if(isset($_GET['password']))$password = safe($_GET['password'],1);
+
+if(isset($_POST['username']))$username = safe($_POST['username'],1);
+if(isset($_POST['password']))$password = safe($_POST['password'],1);
 $mu = new user();
-if(isset($_GET['username']))
+if($_GET['action'] == 'login')
 {
-    $mu->login($username,$password);
+	$mu->login($username,$password);
 }
 
-if(isset($_GET['logout'])){
-   $mu->logout();
-   
+
+if($_GET['action'] == 'logout')
+{
+	$mu->logout();
 }
 if(!isset($_SESSION['username']))header('location: index.php');
 ?>

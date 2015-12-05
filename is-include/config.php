@@ -7,12 +7,16 @@
  * @version 0.2.0 Beta
  */
 
-global $Root;
-$Root = $_SERVER['DOCUMENT_ROOT'];
 require_once ('db-class.php');
 // Get host and ip
 $host = $_SERVER['HTTP_HOST'];
 $ip = $_SERVER['REMOTE_ADDR'];
+
+global $Root;
+// Where is your root file
+$rootfile = '/sam/samcms';
+$Root = 'http://'.$host.$rootfile;
+
 // Set time zone
 $settime = "Asia/Tehran";
 date_default_timezone_set($settime);

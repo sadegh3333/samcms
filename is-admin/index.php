@@ -6,28 +6,19 @@
  * @since October 2013
  * @version 0.0.5 Beta
  */
-session_start();
-require_once('../is-include/config.php');
-require('../is-include/function.php');
-require('../is-include/jdf.php');
-
-if(!($_SESSION['username'])){
-    header('location: metalogin.php');
-}
-
-Get_bootstarp();
 ?>
-<!doctype html >
-<html> 
-<head>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<div id="maindiv"> 
-<!-- Begin header bar  -->
-<?php include ('headerbar.php'); ?>
-<!-- End header bar  -->
+
+
+<?php include ('header.php'); ?>
+
+<?php 
+$mu = new user();
+if ($mu->check_user_stat() == 'logedout') {
+	header('Location: metalogin.php');
+}
+ ?>
+
+
 <!-- Begin menu part -->
 <div id="menuleft"> 
 <?php include ('menuleft.php'); ?>
