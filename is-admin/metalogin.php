@@ -13,6 +13,7 @@
 	<div class="form-login">
 		<div>
 			<form action="login.php?action=login" method="POST">
+				<h4 class="login-footer">Don`t Have an Account ,<a href="#">Singup</a></h4>
 				<div>
 					<div>
 						<label for="user-box">Username:</label>
