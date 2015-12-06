@@ -8,6 +8,11 @@
  */
 
 require_once ('db-class.php');
+
+// Version Stats
+$samcms_version = '0.2.5';
+$channel_release = 'Beta';
+
 // Get host and ip
 $host = $_SERVER['HTTP_HOST'];
 $ip = $_SERVER['REMOTE_ADDR'];

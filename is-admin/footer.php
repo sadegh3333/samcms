@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="footer-copyright"> 
-		samcms Ver.0.2.0 Beta
+		samcms Ver.<?php echo $samcms_version .' '. $channel_release; ?>
 	</div>
 </div>
 
