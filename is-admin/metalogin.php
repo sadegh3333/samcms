@@ -1,8 +1,8 @@
 <?php
 /**
  * @author Sadegh Mahdilou
- * @copyright 2015  Dec
- * @since 2013-2015
+ * @copyright 2015 
+ * @since January 2013 - 2015 December
  * @version 0.7.0
  */
 

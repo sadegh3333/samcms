@@ -2,9 +2,9 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2015  Dec
- * @since 2013 to Dec 2015
- * @version 0.5.1 Stable
+ * @copyright 2015  December
+ * @since  January 2013 - 2015 December 
+ * @version 0.6.0 Stable
  */
 
 require_once('config.php');
@@ -36,6 +36,7 @@ global $Root;
 	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/bootstrap.css'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/bootstrap.min.css'; ?>">
 	<!-- add js bootstrap files -->
+	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/jquery-2.1.4.min.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.js';  ?>"></script>
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>"></script>
 	<?php	

@@ -2,8 +2,8 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2013
- * @since October 2013
+ * @copyright 2015
+ * @since October 2013 - 2015 December
  * @version 0.0.5 Beta
  */
 ?>
@@ -16,20 +16,18 @@ $mu = new user();
 if ($mu->check_user_stat() == 'logedout') {
 	header('Location: metalogin.php');
 }
- ?>
+?>
 
 
-<!-- Begin menu part -->
-<div id="menuleft"> 
-<?php include ('menuleft.php'); ?>
+<div class="row">
+	<div class="col-xs-3 sidebar">
+		<?php include ('sidebar.php'); ?>
+	</div>
+	<div class="col-xs-9 col-xs-offset-3">
+
+	</div>
 </div>
-<!-- End menu part -->
 
 
 
-</div>
-<!-- Begin footer part -->
-<div id="footer"> Powered By <a href="http://iransoftco.ir" target="_blank"> samcms </a> .  </div>
-<!-- End footer part -->
-</body>
-</html>
+<?php include('footer.php'); ?>

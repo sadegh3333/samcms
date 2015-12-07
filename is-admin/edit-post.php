@@ -2,9 +2,9 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2013
- * @since October 2013
- * @version 0.1.3 Beta
+ * @copyright 2015
+ * @since October 2013 - 2015 December
+ * @version 0.2.0 Beta
  */
 
 session_start();

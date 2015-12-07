@@ -2,9 +2,9 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2013
- * @since 2013 October
- * @version 0.2.0 Beta
+ * @copyright 2015
+ * @since  October 2013 - 2015 December
+ * @version 0.2.1 Beta
  */
 
 require_once ('db-class.php');
