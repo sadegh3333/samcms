@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2015
  * @since January 2013-2015 December
- * @version 0.6.0
+ * @version 0.6.1
  */
 
 ?>
@@ -24,6 +24,7 @@ $mu = new user();
 <html>
 <head>
 	<meta  charset='utf-8'>
+	<title> <?php echo $title.' -- samcms '; ?> </title>
 	<?php Get_bootstarp(); ?>
 	<link href='style.css' rel='stylesheet' type='text/css'>
 </head>

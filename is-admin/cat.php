@@ -8,7 +8,7 @@
  */
 ?>
 
-
+<?php $title = 'Category'; ?>
 <?php include ('header.php'); ?>
 
 <?php 

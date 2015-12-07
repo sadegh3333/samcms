@@ -8,6 +8,7 @@
  */
 ?>
 
+<?php $title = 'Dashboard'; ?>
 
 <?php include ('header.php'); ?>
 

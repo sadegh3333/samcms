@@ -8,7 +8,7 @@
  */
 
 ?>
-
+<?php $title = 'New post'; ?>
 <?php include ('header.php'); ?>
 
 <?php 

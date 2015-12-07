@@ -7,6 +7,7 @@
  */
 
 ?>
+<?php $title = 'Login'; ?>
 <?php include('header.php'); ?>
 
 <div class="row">

@@ -10,7 +10,7 @@
 ?>
 
 
-
+<?php $title = 'Posts'; ?>
 
 <?php include ('header.php'); ?>
 
