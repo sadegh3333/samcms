@@ -9,6 +9,7 @@ body {
     font-family: 'lato-light' !important;
     font-weight: 400;
     padding-top: 50px;
+    background-color: rgba(238, 238, 238, 0.33);
 }
 
 a {
@@ -113,7 +114,7 @@ a {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+        width: 172px;
 }
 
 #page-content-wrapper {
@@ -187,7 +188,7 @@ a {
     }
 
     #sidebar-wrapper {
-        width: 250px;
+            width: 172px;
     }
 
     #wrapper.toggled #sidebar-wrapper {

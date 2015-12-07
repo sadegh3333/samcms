@@ -21,10 +21,10 @@ if ($mu->check_user_stat() == 'logedout') {
 
 
 <div class="row">
-    <div class="col-xs-3 sidebar">
+    <div class="col-xs-2 sidebar">
         <?php include ('sidebar.php'); ?>
     </div>
-    <div class="col-xs-9 col-xs-offset-3">
+    <div class="col-xs-10 col-xs-offset-2">
 
         <?php
 
