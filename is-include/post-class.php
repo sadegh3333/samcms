@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2013
  * @since October 2013
- * @version 0.1.4 Beta
+ * @version 0.1.6 Beta
  */
 
 class post
