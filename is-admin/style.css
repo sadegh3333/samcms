@@ -267,6 +267,10 @@ a {
 .title_document_header ul li{
     /*float: right;*/
 }
+.title_document_inside {
+        border-bottom: 1px #eee solid;
+    padding-bottom: 7px;
+}
 /* End post and edit post */
 
 #maindiv {
