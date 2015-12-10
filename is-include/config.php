@@ -10,7 +10,7 @@
 require_once ('db-class.php');
 
 // Version Stats
-$samcms_version = '0.2.6';
+$samcms_version = '0.2.7';
 $channel_release = 'Beta';
 
 // Get host and ip
