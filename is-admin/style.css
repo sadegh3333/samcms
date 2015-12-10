@@ -114,7 +114,7 @@ a {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-        width: 172px;
+    width: 172px;
 }
 
 #page-content-wrapper {
@@ -188,7 +188,7 @@ a {
     }
 
     #sidebar-wrapper {
-            width: 172px;
+        width: 172px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -207,6 +207,67 @@ a {
 }
 
 /* End sidebar part */
+
+/* Begin post and edit post */
+.edit-box {
+    border: 1px #eee solid;
+    padding: 40px;
+    margin: 33px 10px;
+    background-color: #fff;
+}
+
+.edit-box .title {
+    margin-top: -11px;
+    margin-bottom: 30px;
+    border-bottom: 1px #eee solid;
+    padding: 0px 0px 7px 0px;
+}
+.edit-box .label-input {
+    font-size: 16px;
+    margin: 8px 0px;
+    font-style: normal;
+    font-weight: 100;
+}
+.divsubmit{
+    margin: 10px 0px ;
+}
+
+
+.title_document {
+    padding: 6px;
+    border-bottom: #eee 1px solid;
+    border-left: 1px #eee solid;
+    border-right: 1px #eee solid;
+    /*direction: rtl;*/
+    height: 50px;
+}
+.title_document:hover {
+    background-color: #ececec;
+}
+.title_document ul {
+    list-style: none;
+}
+.title_document ul li {
+    /*float: right;*/
+    padding: 0px 4px;
+
+}
+.title_document li:nth-child(3) a{
+    color: rgb(5, 105, 0);
+}
+.title_document_header{
+    font-weight: bold;
+    padding: 6px;
+    border-bottom: #C1C1C1 1px solid;
+    border-left: 1px #eee solid;
+    border-right: 1px #eee solid;
+    /*direction: rtl;*/
+    height: 40px;
+}
+.title_document_header ul li{
+    /*float: right;*/
+}
+/* End post and edit post */
 
 #maindiv {
     border:1px #ddd solid;

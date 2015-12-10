@@ -41,4 +41,6 @@ global $Root;
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.min.js'; ?>"></script>
 	<?php	
 }
+
+
 ?>

@@ -54,25 +54,7 @@ if(isset($_GET['mission']))
         <!-- /TinyMCE -->
 
         <style type="text/css">
-            .edit-box {
-                border: 1px #eee solid;
-                padding: 40px;
-                margin: 33px 10px;
-                background-color: #fff;
-            }
 
-            .edit-box .title {
-                margin-top: -11px;
-                margin-bottom: 30px;
-                border-bottom: 1px #eee solid;
-                padding: 0px 0px 7px 0px;
-            }
-            .edit-box .label-input {
-                font-size: 16px;
-                margin: 8px 0px;
-                font-style: normal;
-                font-weight: 100;
-            }
         </style>
         <!-- Begin Form -->
         <div class="edit-box">

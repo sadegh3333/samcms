@@ -21,21 +21,41 @@ if ($mu->check_user_stat() == 'logedout') {
 }
 ?>
 
-
 <div class="row">
 	<div class="col-xs-2 sidebar">
 		<?php include ('sidebar.php'); ?>
 	</div>
-	<div class="col-xs-10 col-xs-offset-2">
-		<div id="maincenter-post"> 
-			<div id="formcat" dir="rtl">
-				<p><strong> نمایش تمام پست های ارسال شده : </strong></p> 
-				<?php
+	<div class="col-xs-10 col-xs-offset-2"> 
+		<div class="edit-box">
+			<h3 class="title"> All Document </h3> 
+			<?php
+			$sap = new post();
+			$show = $sap->showallpost();
 
-				$sap = new post();
-				$show = $sap->showallpost();
-				?>
-			</div>
+			?>
+			<div class="row">
+				<div class="title_document_header">
+					<ul>
+						<li class="col-xs-5">Title</li>
+						<li class="col-xs-2">Category</li>
+						<li class="col-xs-2">Author</li>
+						<li class="col-xs-2">Date</li>
+						<li class="col-xs-1">Functions</li>
+					</ul>
+				</div>
+				<?php 
+				foreach ($show as $key):
+					?>
+				<div class="title_document">
+					<ul>
+						<li class="col-xs-5">  <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>">  <?php echo $key['title']; ?> <a> </li>
+						<li class="col-xs-2"> <?php echo $sap->getcat($key['cat']).' , '.$sap->getsubcat($key['subcat']); ?> </li>
+						<li class="col-xs-2"><?php echo $key['author']; ?></li>
+						<li class="col-xs-2"><?php echo date('Y/m/d',$key['datetime']); ?></li>
+						<li class="col-xs-1"> <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>"> Edit </a> | <a href="../is-content/singlepost.php?id=<?php echo $key['id']; ?>">View</a>  </li>
+					</ul>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </div>

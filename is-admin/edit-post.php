@@ -33,7 +33,7 @@ if ($mu->check_user_stat() == 'logedout') {
         if (isset($_POST['mission']))
         {
             $mission = safe($_POST['mission'], 1);
-            $title_document = safe($_POST['title'], 1);
+            $title_document = safe($_POST['title_document'], 1);
             $minicontent = safe($_POST['minicontent'],1);
             $fullcontent = safe($_POST['fullcontent'], 1);
             $author = safe($_SESSION['username'], 1);
@@ -56,95 +56,79 @@ if ($mu->check_user_stat() == 'logedout') {
         <!-- TinyMCE -->
         <script type="text/javascript" src="../is-include/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
-            tinymce.init({
-                selector: "textarea",
-                theme: "modern",
-                plugins: [
-                "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-                "searchreplace wordcount visualblocks visualchars code fullscreen",
-                "insertdatetime media nonbreaking save table contextmenu directionality",
-                "emoticons template paste textcolor"
-                ],
-                toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-                toolbar2: "print preview media | forecolor backcolor emoticons",
-                image_advtab: true,
-                templates: [
-                {title_document: 'Test template 1', content: 'Test 1'},
-                {title_document: 'Test template 2', content: 'Test 2'}
-                ]
-            });
+            tinymce.init({  selector: "textarea"  });
         </script>
         <!-- /TinyMCE -->
 
 
 
         <!-- Begin Form -->
-        <div id="maincenter-post">
-            <form action="edit-post.php?id=<?php echo($id); ?>" method="POST" style="width: 100%;">
+        <div class="edit-box">
+            <h3 class="title">Edit document </h3>
+            <form action="edit-post.php?id=<?php echo($id); ?>" method="POST">
                 <input hidden="" value="<?php echo($id); ?>" name="id" />
-                <input name="mission" value="update" hidden="" /> 
-                <p><label> Title : </label><input value="<?php
-
-                echo ($getpost['title']);
-
-                    ?>" name="title_document" type="text"/></p>
-                    <!-- Begin Get cat -->
-                    <p><span> <label>Category : </label><select name="cat">
-                        <option></option>
-                        <?php
-
-                        $q = $dbc->query("SELECT * FROM `cat`");
-                        while ($res = $dbc->fetch($q))
-                        {
-
-                            echo ('<option value="'.$res['id'].'">' . $res['name'] . '</option>');
-                        }
-
-                        ?>
-                    </select> </span> 
-                    <span> <label> Sub Category :  </label>
-                        <select name="subcat">
-                            <option></option>
-                            <?php
-
-                            $q = $dbc->query("SELECT * FROM `subcat`");
-                            while ($res = $dbc->fetch($q))
-                            {
-                                echo ('<option value="'.$res['id'].'">' . $res['name'] . '</option>');
-                            }
-
-                            ?>
-                        </select></span></p>
-                        <!-- End Get cat -->
-                        <label> Mini Content : </label>
-                        <textarea name="minicontent" > <?php
-                            $fc = safe($getpost['minicontent'],1);
-                            echo ($fc);
-
-                            ?> </textarea>
-                            <label> Full Content : </label>
-                            <textarea name="fullcontent"> <?php
-
-                                echo ($getpost['fullcontent']);
-
-                                ?> </textarea>
-                                <p><label> Tag : </label> <input type="text" name="tag" value="<?php
-
-                                    echo ($getpost['tag']);
-
-                                    ?>" /></p>
-                                    <p> <input type="submit" /> </p>
-                                </form>
-                                <!-- End Form -->
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
+                <input  name="mission" value="update" hidden="" /> 
+                <div>
+                <label class="label-input"> Title: </label>
+                    <input  class="form-control" value="<?php echo ($getpost['title']); ?>" name="title_document" type="text"/>
                 </div>
+                <!-- Begin Get cat -->
+                <div>
+                   <label class="label-input">Category: </label>
+                   <select class="form-control" name="cat">
+                    <option></option>
+                    <?php
+
+                    $q = $dbc->query("SELECT * FROM `cat`");
+                    while ($res = $dbc->fetch($q))
+                    {
+
+                        echo ('<option value="'.$res['id'].'">' . $res['name'] . '</option>');
+                    }
+
+                    ?>
+                </select> 
+                <label  class="label-input"> Sub Category:  </label>
+                <select class="form-control" name="subcat">
+                    <option></option>
+                    <?php
+
+                    $q = $dbc->query("SELECT * FROM `subcat`");
+                    while ($res = $dbc->fetch($q))
+                    {
+                        echo ('<option value="'.$res['id'].'">' . $res['name'] . '</option>');
+                    }
+
+                    ?>
+                </select>
+            </div>
+            <!-- End Get cat -->
+            <label  class="label-input">  Mini Content: </label>
+            <textarea  name="minicontent" > 
+                <?php echo safe($getpost['minicontent'],1); ?>
+            </textarea>
+            <label class="label-input"> Full Content: </label>
+            <textarea name="fullcontent"> 
+                <?php echo safe($getpost['fullcontent'],1); ?> 
+            </textarea>
+            <div>
+                <label class="label-input"> Tag: </label>
+                <input class="form-control" type="text" name="tag" value="<?php echo ($getpost['tag']); ?>" />
+            </div>
+            <div class="divsubmit"> 
+                <input class="btn btn-success" type="submit" />
+            </div>
+        </form>
+        <!-- End Form -->
+    </div>
+</div>
 
 
 
-                <?php include('footer.php'); ?>
+
+</div>
+</div>
+
+
+
+<?php include('footer.php'); ?>

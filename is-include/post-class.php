@@ -30,6 +30,14 @@ class post
         $sub = $res['sub'];
         return $id;
     }
+    function getcat($idcat){
+        global $dbc;
+        $idcat = $idcat;
+        $q = $dbc->query("SELECT * FROM `cat` WHERE id='$idcat' LIMIT 1");
+        $res = $dbc->fetch($q);
+        $cat = $res['name'];
+        return $cat;
+    }
     function setsubcat($subcat)
     {
         global $dbc;
@@ -39,6 +47,14 @@ class post
         $id = $res['id'];
         $sub = $res['subcatid'];
         return $id;
+    }
+    function getsubcat($idsubcat){
+        global $dbc;
+        $idsubcat = $idsubcat;
+        $q = $dbc->query("SELECT * FROM `subcat` WHERE id='$idsubcat' LIMIT 1");
+        $res = $dbc->fetch($q);
+        $subcat = $res['name'];
+        return $subcat;
     }
     function getpost($id)
     {
@@ -60,6 +76,8 @@ class post
         }
         return $pstcnt;
     }
+
+
     function showallpost()
     {
 
@@ -67,13 +85,10 @@ class post
         $q = $dbc->query("SELECT * FROM `content` ORDER BY `id` DESC");
         while ($res = $dbc->fetch($q))
         {
-            $id = $res['id'];
-            $title = $res['title'];
-            $total = ('<p><a href="../is-admin/edit-post.php?id=' . $id . '">' .
-                $id . '. ' . $title . '<a></p>');
-            echo ($total);
+            $document[] = $res;
         }
 
+        return $document;
     }
     function update($id,$title, $minicontent, $fullcontent, $author, $tag, $cat, $subcat,
         $datetime)
