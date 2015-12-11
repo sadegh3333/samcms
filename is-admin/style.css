@@ -148,7 +148,7 @@ a {
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
+    text-indent: 10px;
     line-height: 40px;
 }
 .sidebar-nav ul {
@@ -212,6 +212,12 @@ a {
         position: relative;
         margin-right: 0;
     }
+}
+
+.sidebar-nav li a i {
+    width: 33px;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* End sidebar part */
