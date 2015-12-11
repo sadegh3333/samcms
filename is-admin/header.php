@@ -37,7 +37,7 @@ $mu = new user();
 						<label class="label-header"> Welcome <?php echo $_SESSION['username']; ?></label>
 					</li>
 					<li class="right">
-						<a class="btn" href="login.php?action=logout"> Logout </a>
+						<a class="btn" href="login.php?action=logout"><i class="fa fa-lock"></i> Logout </a>
 					</li>
 				</ul>
 			<?php else: ?>
