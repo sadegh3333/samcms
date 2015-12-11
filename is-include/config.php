@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2015
  * @since  October 2013 - 2015 December
- * @version 0.2.1 Beta
+ * @version 0.2.2 Beta
  */
 
 require_once ('db-class.php');
