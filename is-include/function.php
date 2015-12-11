@@ -35,6 +35,7 @@ global $Root;
 	<!-- add css bootstrap files -->
 	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/bootstrap.css'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/bootstrap.min.css'; ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $Root.'/is-include/css/font-awesome.min.css'; ?>">
 	<!-- add js bootstrap files -->
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/jquery-2.1.4.min.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo $Root.'/is-include/js/bootstrap.js';  ?>"></script>
