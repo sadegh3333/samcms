@@ -12,6 +12,8 @@ require_once ('db-class.php');
 // Version Stats
 $samcms_version = '0.2.7';
 $channel_release = 'Beta';
+$code_name = 'Dennis Ritchie';
+$link_code_name = 'https://en.wikipedia.org/wiki/Dennis_Ritchie';
 
 // Get host and ip
 $host = $_SERVER['HTTP_HOST'];
