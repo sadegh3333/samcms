@@ -2,12 +2,12 @@
  * @author Sadegh Mahdilou
  * @copyright 2015
  * @since October 2013 - 2015 December
- * @version 0.5.0 Beta
+ * @version 0.6.0 Beta
  */
 
 
-/* latin-ext */
-@font-face{
+ /* latin-ext */
+ @font-face{
     font-family: 'lato-light';
     font-style: normal;
     src:url('../is-include/fonts/Lato-Light.ttf')format('truetype');;
@@ -23,6 +23,9 @@ body {
 a {
     text-decoration:none;
     color:rgb(33,77,250);
+}
+li{
+    list-style: none;
 }
 
 .header-bar {
@@ -282,8 +285,43 @@ a {
     /*float: right;*/
 }
 .title_document_inside {
-        border-bottom: 1px #eee solid;
+    border-bottom: 1px #eee solid;
     padding-bottom: 7px;
 }
 /* End post and edit post */
 
+
+
+/* Begin Category pages */
+.title-category {
+    border: 1px #eee solid;
+    padding: 6px 6px;
+}
+
+.box-add-category {
+    border-left: 1px #eee solid;
+    height: 100%;
+}
+.show-category-box{
+
+}
+
+.show-category-box{
+        border: 1px #eee solid;
+}
+.show-box-title-category{
+        padding: 10px;
+        border-bottom:1px #eee solid; 
+}
+.show-box-title-category div:nth-child(1){
+    border-right: 1px #eee solid;
+    margin-right: 1px; 
+}
+.show-category-box li {
+    padding: 10px;
+}
+.show-category-box li:nth-child(odd){
+        background-color: #eee;
+}
+
+/* End Category pages */

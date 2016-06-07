@@ -16,6 +16,7 @@ require('../is-include/function.php');
 require('../is-include/jdf.php');
 require('../is-include/user-class.php');
 require('../is-include/post-class.php');
+require('../is-include/category-class.php');
 
 
 $mu = new user();

@@ -4,20 +4,18 @@
  * @author Sadegh Mahdilou
  * @copyright 2013
  * @since October 2013
- * @version 0.1.6 Beta
+ * @version 0.1.9 Beta
  */
 
 class post
 {
     var $pstcnt;
 
-    function sendpost($title, $minicontent, $fullcontent, $author, $tag, $cat, $subcat,
+    function sendpost($title, $minicontent, $fullcontent, $author, $tag, $category,
         $datetime)
     {
         global $dbc;
-        $idcat = $this->setcat($cat);
-        $idsubcat = $this->setsubcat($subcat);
-        $q = $dbc->query("INSERT INTO `content` (id,title,minicontent,fullcontent,cat,subcat,tag,author,datetime,counter,dedicatedlink) VALUES ('id','$title','$minicontent','$fullcontent','$idcat','$idsubcat','$tag','$author','$datetime','0','0')");
+        $q = $dbc->query("INSERT INTO `content` (id,title,minicontent,fullcontent,category,tag,author,datetime,counter,dedicatedlink) VALUES ('id','$title','$minicontent','$fullcontent','$category','$tag','$author','$datetime','0','0')");
         echo ('done....!');
     }
     function setcat($cat)
@@ -68,8 +66,7 @@ class post
                 'minicontent' => safe($res['minicontent'],1),
                 'fullcontent' => safe($res['fullcontent'], 1),
                 'tag' => safe($res['tag'], 1),
-                'cat' => safe($res['cat'], 1),
-                'subcat' => safe($res['subcat'], 1),
+                'category' => safe($res['category'], 1),
                 'datetime' => $res['datetime'],
                 );
 
@@ -90,11 +87,11 @@ class post
 
         return $document;
     }
-    function update($id,$title, $minicontent, $fullcontent, $author, $tag, $cat, $subcat,
+    function update($id,$title, $minicontent, $fullcontent, $author, $tag, $category, 
         $datetime)
     {
         global $dbc;
-        $q = $dbc->query("UPDATE `content` SET  title='$title',minicontent='$minicontent',fullcontent='$fullcontent',cat='$cat',subcat='$subcat',tag='$tag',author='$author',datetime='$datetime' WHERE id='$id'");
+        $q = $dbc->query("UPDATE `content` SET  title='$title',minicontent='$minicontent',fullcontent='$fullcontent',category='$category',tag='$tag',author='$author',datetime='$datetime' WHERE id='$id'");
         echo('Done...!');
     }
 }

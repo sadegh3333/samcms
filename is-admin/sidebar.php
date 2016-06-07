@@ -24,7 +24,7 @@
 			</ul>
 		</li>
 		<li>
-			<a href="<?php echo $Root.'/is-admin/cat.php'; ?>"><i class="fa fa-briefcase"></i>Category</a>
+			<a href="<?php echo $Root.'/is-admin/category.php'; ?>"><i class="fa fa-briefcase"></i>Category</a>
 		</li>
 	</ul>
 </div>

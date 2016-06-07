@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2013
  * @since October 2013 - 2015 December
- * @version 0.3.0 Beta
+ * @version 0.4.0 Beta
  */
 
 ?>
@@ -19,6 +19,7 @@ $mu = new user();
 if ($mu->check_user_stat() == 'logedout') {
 	header('Location: metalogin.php');
 }
+$cat = new category();
 ?>
 
 <div class="row">
@@ -49,7 +50,7 @@ if ($mu->check_user_stat() == 'logedout') {
 				<div class="title_document">
 					<ul>
 						<li class="col-xs-5">  <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>">  <?php echo $key['title']; ?> <a> </li>
-						<li class="col-xs-2"> <?php echo $sap->getcat($key['cat']).' , '.$sap->getsubcat($key['subcat']); ?> </li>
+						<li class="col-xs-2"> <?php echo $cat->get_single_category(($key['category']))['title']; ?> </li>
 						<li class="col-xs-2"><?php echo $key['author']; ?></li>
 						<li class="col-xs-2"><?php echo date('Y/m/d',$key['datetime']); ?></li>
 						<li class="col-xs-1"> <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>"> Edit </a> | <a href="../is-content/singlepost.php?id=<?php echo $key['id']; ?>">View</a>  </li>

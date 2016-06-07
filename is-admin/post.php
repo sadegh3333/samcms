@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2015
  * @since October 2013 - 2015 December
- * @version 0.3.0 Beta
+ * @version 0.4.0 Beta
  */
 
 ?>
@@ -17,6 +17,8 @@ if ($mu->check_user_stat() == 'logedout') {
     header('Location: metalogin.php');
 }
 
+$cat = new category();
+
 $pst = new post();
 
 if(isset($_GET['mission']))
@@ -27,12 +29,11 @@ if(isset($_GET['mission']))
     $fullcontent = safe($_POST['fullcontent'],1);
     $author = safe($_SESSION['username'],1);
     $tag = safe($_POST['tag'],1);
-    $cat = safe($_POST['cat'],1);
-    $subcat = safe($_POST['subcat'],1);
+    $category = safe($_POST['category'],1);
     $datetime = time();
     if($mission == 'send')
     {
-        $pst->sendpost($title,$minicontent,$fullcontent,$author,$tag,$cat,$subcat,$datetime);
+        $pst->sendpost($title,$minicontent,$fullcontent,$author,$tag,$category,$datetime);
         header('location: index.php');
     } 
 }
@@ -65,47 +66,36 @@ if(isset($_GET['mission']))
                     <input class="form-control" name="title" type="text" autofocus />
                 </div>
                 <!-- Begin Get cat -->
-                <p><span> <label class="label-input">Category: </label><select class="form-control" name="cat">
-                    <option></option>
-                    <?php
 
-                    $q = $dbc->query("SELECT * FROM `cat`");
-                    while ($res = $dbc->fetch($q))
-                    {
-                        echo ('<option>' . $res['name'] . '</option>');
+                <label class="label-input">Category: </label>
+                <select class="form-control" name='category'>
+                   <option value="0" ></option>
+                       <?php 
+                       $getcat = $cat->get_all_category();
+                       foreach ($getcat as $key) {
+                        echo "<option value=".$key[id].">";
+                        echo $key['title'];
+                        echo "</option>";
                     }
-
                     ?>
-                </select> </span> 
-                <span> <label class="label-input"> Sub Category:  </label>
-                    <select class="form-control" name="subcat">
-                        <option></option>
-                        <?php
+                </select>
 
-                        $q = $dbc->query("SELECT * FROM `subcat`");
-                        while ($res = $dbc->fetch($q))
-                        {
-                            echo ('<option>' . $res['name'] . '</option>');
-                        }
-
-                        ?>
-                    </select></span></p>
-                    <!-- End Get cat -->
-                    <label class="label-input"> Mini Content: </label>
-                    <textarea class="form-control" name="minicontent" style="height: 500px;"></textarea>
-                    <label class="label-input"> Full Content: </label>
-                    <textarea class="form-control"  name="fullcontent" style="height: 500px;"></textarea>
-                    <p><label class="label-input"> Tag: </label> <input class="form-control" type="text" name="tag" id="textinput" /></p>
-                    <p> <input class="btn btn-success" type="submit" /> </p>
-                </form>
-                <!-- End Form -->
-            </div>
+                <!-- End Get cat -->
+                <label class="label-input"> Mini Content: </label>
+                <textarea class="form-control" name="minicontent" style="height: 500px;"></textarea>
+                <label class="label-input"> Full Content: </label>
+                <textarea class="form-control"  name="fullcontent" style="height: 500px;"></textarea>
+                <p><label class="label-input"> Tag: </label> <input class="form-control" type="text" name="tag" id="textinput" /></p>
+                <p> <input class="btn btn-success" type="submit" /> </p>
+            </form>
+            <!-- End Form -->
         </div>
-
-
-
-
     </div>
+
+
+
+
+</div>
 </div>
 
 

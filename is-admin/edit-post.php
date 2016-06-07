@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2015
  * @since October 2013 - 2015 December
- * @version 0.4.0 Beta
+ * @version 0.5.0 Beta
  */
 ?>
 
@@ -17,6 +17,8 @@ $mu = new user();
 if ($mu->check_user_stat() == 'logedout') {
     header('Location: metalogin.php');
 }
+
+$cat = new category();
 ?>
 
 
@@ -38,12 +40,11 @@ if ($mu->check_user_stat() == 'logedout') {
             $fullcontent = safe($_POST['fullcontent'], 1);
             $author = safe($_SESSION['username'], 1);
             $tag = safe($_POST['tag'], 1);
-            $cat = safe($_POST['cat'], 1);
-            $subcat = safe($_POST['subcat'], 1);
+            $category = safe($_POST['category'], 1);
             $datetime = time();
             if ($mission == 'update')
             {
-                $pst->update($id,$title_document, $minicontent, $fullcontent, $author, $tag, $cat, $subcat,
+                $pst->update($id,$title_document, $minicontent, $fullcontent, $author, $tag, $category,
                     $datetime);
                 header('location: index.php');
             }
@@ -69,37 +70,31 @@ if ($mu->check_user_stat() == 'logedout') {
                 <input hidden="" value="<?php echo($id); ?>" name="id" />
                 <input  name="mission" value="update" hidden="" /> 
                 <div>
-                <label class="label-input"> Title: </label>
+                    <label class="label-input"> Title: </label>
                     <input  class="form-control" value="<?php echo ($getpost['title']); ?>" name="title_document" type="text"/>
                 </div>
                 <!-- Begin Get cat -->
                 <div>
                    <label class="label-input">Category: </label>
-                   <select class="form-control" name="cat">
-                    <option></option>
-                    <?php
-
-                    $q = $dbc->query("SELECT * FROM `cat`");
-                    while ($res = $dbc->fetch($q))
-                    {
-
-                        echo ('<option value="'.$res['id'].'">' . $res['name'] . '</option>');
+                   <select class="form-control" name='category'>
+                       <?php $this_category = $cat->get_single_category($getpost['category']);  ?>
+                       <option value="0" >
+                           <?php if ($this_category == 0){ ?>
+                            <?php echo 'this is not category'; ?>
+                           <?php }else{ ?>
+                           <?php echo $this_category['title']; ?>
+                       <?php } ?>
+                       </option>
+                       <?php 
+                       $getcat = $cat->get_all_category();
+                       foreach ($getcat as $key) {
+                        echo "<option value=".$key[id].">";
+                        echo $key['title'];
+                        echo "</option>";
                     }
 
                     ?>
-                </select> 
-                <label  class="label-input"> Sub Category:  </label>
-                <select class="form-control" name="subcat">
-                    <option></option>
-                    <?php
 
-                    $q = $dbc->query("SELECT * FROM `subcat`");
-                    while ($res = $dbc->fetch($q))
-                    {
-                        echo ('<option value="'.$res['id'].'">' . $res['name'] . '</option>');
-                    }
-
-                    ?>
                 </select>
             </div>
             <!-- End Get cat -->
