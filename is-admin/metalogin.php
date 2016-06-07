@@ -3,7 +3,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2015 
  * @since January 2013 - 2015 December
- * @version 0.7.0
+ * @version 0.7.1
  */
 
 ?>
