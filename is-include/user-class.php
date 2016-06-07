@@ -2,22 +2,22 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2015
- * @since October 2013 - 2015 December
- * @version 0.2.2 Beta
+ * @copyright 2016
+ * @since October 2013 - 2016 june
+ * @version 0.3.0 Beta
  */
 
 class user
 {
- function __construct() {
-   $user = array(
-    'username' => '',
-    'password' => '',
-    'state' =>'logout'
-    );
-}
-function login($username = '', $password = '')
-{
+   function __construct() {
+     $user = array(
+        'username' => '',
+        'password' => '',
+        'state' =>'logout'
+        );
+ }
+ function login($username = '', $password = '')
+ {
     global $dbc;
     $logindate = time();
     echo ('get username is : ' . $username . ' password : ' . $password . '<br />');
@@ -54,6 +54,17 @@ function check_user_stat() {
     }
 }
 
+function get_userdata($username) {
+    global $dbc;
+    
+    $userdata = array();
+    $q = $dbc->query("SELECT * FROM `metauser` WHERE username ='$username'");
+
+    $res = $dbc->fetch($q);
+    $this->userdata = array(
+        'username' => $res['username'],
+        );
 }
 
+}
 ?>

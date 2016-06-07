@@ -21,7 +21,7 @@ if ($mu->check_user_stat() == 'logedout') {
 }
 $cat = new category();
 ?>
-
+ 
 <div class="row">
 	<div class="col-xs-2 sidebar">
 		<?php include ('sidebar.php'); ?>
