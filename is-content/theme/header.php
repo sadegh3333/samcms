@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>samcms -- Content Managment System</title>
-	<?php $template->get_bootstarp(); ?>
+	<?php $template->load_bootstarp(); ?>
 </head>
 <body>
 

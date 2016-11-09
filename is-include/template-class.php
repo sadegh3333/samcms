@@ -26,14 +26,8 @@ class template
 
 	}
 
-
-	public function load_bootstrap(){
-
-	} 
-
-
 	/* Function for get bootsrap files */
-	function get_bootstarp(){
+	function load_bootstarp(){
 		global $Root;
 		?>
 		<!-- add css bootstrap files -->
