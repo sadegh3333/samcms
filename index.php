@@ -2,9 +2,9 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2013
- * @since 2013 October
- * @version 0.2.0 Beta
+ * @copyright 2016
+ * @since 2013 October - Nov 2016
+ * @version 0.3.0 Beta
  */
 
 
