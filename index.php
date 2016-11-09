@@ -8,7 +8,7 @@
  */
 
 
-/*
-header("Location: is-content/index.php");*/
+
+header("Location: is-content/index.php");
 
 ?>
