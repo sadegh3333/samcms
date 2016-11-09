@@ -7,6 +7,18 @@
  * @version 0.2.0 Beta
  */
 
-header("Location: is-content/index.php");
+
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
+
+echo ABSPATH;
+
+
+echo "<br>";
+
+echo phpversion();
+/*
+header("Location: is-content/index.php");*/
 
 ?>

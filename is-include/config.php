@@ -21,7 +21,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 
 global $Root;
 // Where is your root file
-$rootfile = '/samcms';
+$rootfile = '/samcms.last.version';
 $Root = 'http://'.$host.$rootfile;
 
 // Set time zone
@@ -42,4 +42,7 @@ $dbc = new db();
 $dbc->connectdb($hostname, $usernamehost, $passwordhost, $databasename);
 $dbc->query("SET CHARACTER SET utf8;");
 
+
+
+define('PLUG_DIR', '../is-content/plugins');
 ?>

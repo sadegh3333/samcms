@@ -17,7 +17,11 @@ require('../is-include/jdf.php');
 require('../is-include/user-class.php');
 require('../is-include/post-class.php');
 require('../is-include/category-class.php');
+require('../is-include/plugin.class.php');
 
+$plugins = new plugin_api();
+
+$plugins->run_active_plugin();
 
 $mu = new user();
 ?>
