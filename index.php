@@ -8,16 +8,6 @@
  */
 
 
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
-}
-
-echo ABSPATH;
-
-
-echo "<br>";
-
-echo phpversion();
 /*
 header("Location: is-content/index.php");*/
 
