@@ -42,4 +42,11 @@ class template
 	}
 
 
+	// load template directory
+	public function get_template_directory(){
+		global $Root;
+		return $Root.'/is-content/theme/';
+	}
+
+
 }
