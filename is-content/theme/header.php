@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>samcms -- Content Managment System</title>
+	<?php $template->get_bootstarp(); ?>
 </head>
 <body>
+
+

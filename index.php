@@ -9,6 +9,7 @@
 
 
 
-header("Location: is-content/theme/index.php");
+
+include('load.php');
 
 ?>
