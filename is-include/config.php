@@ -19,10 +19,9 @@ $link_code_name = 'https://en.wikipedia.org/wiki/Rasmus_Lerdorf';
 $host = $_SERVER['HTTP_HOST'];
 $ip = $_SERVER['REMOTE_ADDR'];
 
-global $Root;
 // Where is your root file
 $rootfile = '/samcms.last.version';
-$Root = 'http://'.$host.$rootfile;
+define(Root, 'http://'.$host.$rootfile);
 
 // Set time zone
 $settime = "Asia/Tehran";
