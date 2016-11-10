@@ -47,4 +47,9 @@ class template
 	}
 
 
+	// back home url
+	public function home_url(){
+		return Root;
+	}
+
 }

@@ -36,16 +36,29 @@ $mu = new user();
 <body>
 	<div  class="header-bar navbar navbar-inverse navbar-fixed-top" >  
 		<div class="container-fluid">
-			<?php if ($mu->check_user_stat() == 'logedin'): ?>
-				<ul class="fullwidth nav navbar-nav navbar-right ">
+			<ul class="nav navbar-nav navbar-left ">
+				<?php if ($mu->check_user_stat() == 'logedin'): ?>
 					<li>
 						<label class="label-header"> Welcome <?php echo $_SESSION['username']; ?></label>
 					</li>
-					<li class="right">
-						<a class="btn" href="login.php?action=logout"><i class="fa fa-power-off"></i> Logout </a>
+					<li>
+						<a class="btn" href="<?php echo Root; ?>">
+							Home
+						</a>
+					</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="btn" href="login.php?action=logout"><i class="fa fa-power-off"></i> Logout </a>
+						</li>
+					</ul>
+				<?php else: ?>
+					<li>
+						<a class="btn" href="<?php echo Root; ?>">
+							Home
+						</a>
 					</li>
 				</ul>
-			<?php else: ?>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="right">
 						<a class="btn" href="">Sign Up</a>
