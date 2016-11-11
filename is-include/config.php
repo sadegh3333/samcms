@@ -2,15 +2,16 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2015
- * @since  October 2013 - 2015 December
- * @version 0.2.2 Beta
+ * @copyright October 2013 - 2016 November
+ * @since version 0.2.0
+ * @version 0.3.0 Beta
+ *
  */
 
 require_once ('db-class.php');
 
 // Version Stats
-$samcms_version = '0.5.0';
+$samcms_version = '0.5.1';
 $channel_release = 'Beta';
 $code_name = 'Rasmus Lerdorf';
 $link_code_name = 'https://en.wikipedia.org/wiki/Rasmus_Lerdorf';
@@ -42,6 +43,6 @@ $dbc->connectdb($hostname, $usernamehost, $passwordhost, $databasename);
 $dbc->query("SET CHARACTER SET utf8;");
 
 
-
+// Define addr for plugin folder
 define('PLUG_DIR', '../is-content/plugins');
 ?>

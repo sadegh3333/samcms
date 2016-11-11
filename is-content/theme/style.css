@@ -1,8 +1,9 @@
 /**
  * @author Sadegh Mahdilou
- * @copyright 2016
- * @since Nov 2016
- * @version 0.2.0 Beta
+ * @copyright November 2016 
+ * @since version 0.5.0
+ * @version 0.2.5 Beta
+ * @template samcms
  */
 
 
@@ -44,8 +45,39 @@
  	padding: 16px 0px;
  	margin: 0px auto;
  }
+ .main-page {
+ 	margin-top: 50px;
+ }
+
+ .main-page .welcome h2 {
+ 	font-size: 50px;
+ 	text-align: center;
+ 	margin-top: 200px;
+ 	font-weight: 200;
+ }
+ .main-page .welcome h4 {
+ 	text-align: center;
+ 	font-weight: 200;
+ 	font-size: 20px;
+ }
+ .main-page .welcome h5 {
+ 	text-align: center;
+ 	font-size: 16px;
+ 	font-weight: 300;
+ 	margin-top: 20px;
+ 	letter-spacing: 5px;
+ }
+ .main-page .welcome span {
+ 	font-weight: 200;
+ 	font-size: 14px;
+ }
  .copyright {
- 	background-color: rgba(220, 220, 220, 0.55);
+ 	background-color: rgba(220, 220, 220, 0.33);
  	padding: 10px 0px;
  	margin-top: 33px;
+ 	bottom: 0px;
+ 	position: absolute;
+ 	width: 100%;
+ 	font-weight: 300;
+ 	font-size: 14px;
  }
