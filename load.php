@@ -38,12 +38,20 @@ $plugins->run_active_plugin();
 
 $mu = new user();
 
+$pst = new post();
 
 $template = new template();
 
 
-
+if (isset($_GET['id'])) {
+	include('is-content/theme/single.php');
+}
+else{
 // inlcude main file for theme
-include('is-content/theme/index.php');
+	include('is-content/theme/index.php');
+}
 
- ?>
+
+
+
+?>

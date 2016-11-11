@@ -21,7 +21,7 @@ if ($mu->check_user_stat() == 'logedout') {
 }
 $cat = new category();
 ?>
- 
+
 <div class="row">
 	<div class="col-xs-2 sidebar">
 		<?php include ('sidebar.php'); ?>
@@ -32,7 +32,7 @@ $cat = new category();
 			<?php
 			$sap = new post();
 			$show = $sap->showallpost();
-
+print_r($show);
 			?>
 			<div class="row">
 				<div class="title_document_header">
@@ -45,22 +45,23 @@ $cat = new category();
 					</ul>
 				</div>
 				<?php 
-				foreach ($show as $key):
-					?>
-				<div class="title_document">
-					<ul>
-						<li class="col-xs-5">  <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>">  <?php echo $key['title']; ?> <a> </li>
-						<li class="col-xs-2"> <?php echo $cat->get_single_category(($key['category']))['title']; ?> </li>
-						<li class="col-xs-2"><?php echo $key['author']; ?></li>
-						<li class="col-xs-2"><?php echo date('Y/m/d',$key['datetime']); ?></li>
-						<li class="col-xs-1"> <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>"> Edit </a> | <a href="../is-content/singlepost.php?id=<?php echo $key['id']; ?>">View</a>  </li>
-					</ul>
-				</div>
-			<?php endforeach; ?>
+				if (!empty($show)):
+					foreach ($show as $key):
+						?>
+					<div class="title_document">
+						<ul>
+							<li class="col-xs-5">  <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>">  <?php echo $key['title']; ?> <a> </li>
+							<li class="col-xs-2"> <?php echo $cat->get_single_category(($key['category']))['title']; ?> </li>
+							<li class="col-xs-2"><?php echo $key['author']; ?></li>
+							<li class="col-xs-2"><?php echo date('Y/m/d',$key['datetime']); ?></li>
+							<li class="col-xs-1"> <a href="../is-admin/edit-post.php?id=<?php echo $key['id']; ?>"> Edit </a> | <a href="<?php echo Root; ?>/?id=<?php echo $key['id']; ?>">View</a></li>
+						</ul>
+					</div>
+				<?php endforeach; endif; ?>
+			</div>
 		</div>
 	</div>
-</div>
 
 
 
-<?php include('footer.php'); ?>
+	<?php include('footer.php'); ?>

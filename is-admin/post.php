@@ -25,26 +25,26 @@ if(isset($_GET['mission']))
 {
     $mission = safe($_GET['mission'],1);
     $title = safe($_POST['title'],1); 
-    $minicontent = safe($_POST['minicontent'],1);
-    $fullcontent = safe($_POST['fullcontent'],1);
+    $content = safe($_POST['content'],1);
     $author = safe($_SESSION['username'],1);
     $tag = safe($_POST['tag'],1);
     $category = safe($_POST['category'],1);
     $datetime = time();
     if($mission == 'send')
     {
-        $pst->sendpost($title,$minicontent,$fullcontent,$author,$tag,$category,$datetime);
+        $pst->submit_document($title,$content,$author,$tag,$category,$datetime);
         header('location: index.php');
+
     } 
 }
 ?>
 
 
 <div class="row">
-    <div class="col-xs-2 sidebar">
+    <div class="col-md-2 sidebar">
         <?php include ('sidebar.php'); ?>
     </div>
-    <div class="col-xs-10 col-xs-offset-2">
+    <div class="col-md-10">
 
 
         <!-- TinyMCE -->
@@ -69,28 +69,26 @@ if(isset($_GET['mission']))
 
                 <label class="label-input">Category: </label>
                 <select class="form-control" name='category'>
-                   <option value="0" ></option>
-                       <?php 
-                       $getcat = $cat->get_all_category();
-                       foreach ($getcat as $key) {
-                        echo "<option value=".$key[id].">";
-                        echo $key['title'];
-                        echo "</option>";
-                    }
-                    ?>
-                </select>
+                 <option value="0" ></option>
+                 <?php 
+                 $getcat = $cat->get_all_category();
+                 foreach ($getcat as $key) {
+                    echo "<option value=".$key[id].">";
+                    echo $key['title'];
+                    echo "</option>";
+                }
+                ?>
+            </select>
 
-                <!-- End Get cat -->
-                <label class="label-input"> Mini Content: </label>
-                <textarea class="form-control" name="minicontent" style="height: 500px;"></textarea>
-                <label class="label-input"> Full Content: </label>
-                <textarea class="form-control"  name="fullcontent" style="height: 500px;"></textarea>
-                <p><label class="label-input"> Tag: </label> <input class="form-control" type="text" name="tag" id="textinput" /></p>
-                <p> <input class="btn btn-success" type="submit" /> </p>
-            </form>
-            <!-- End Form -->
-        </div>
+            <!-- End Get cat -->
+            <label class="label-input"> Content: </label>
+            <textarea class="form-control"  name="content" style="height: 500px;"></textarea>
+            <p><label class="label-input"> Tag: </label> <input class="form-control" type="text" name="tag" id="textinput" /></p>
+            <p> <input class="btn btn-success" type="submit" /> </p>
+        </form>
+        <!-- End Form -->
     </div>
+</div>
 
 
 

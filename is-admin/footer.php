@@ -9,13 +9,15 @@
  */
 
 
- ?>
-<div class="row">
-	<div class="footer-copyright"> 
-		samcms Ver.<?php echo $samcms_version .' '. $channel_release; ?>
-	</div>
+?>
 </div>
+</div>
+<div class="container-fluid footer">
+	<div class="container">
+		<div class="footer-copyright"> 
+			samcms Ver.<?php echo $samcms_version .' '. $channel_release; ?>
+		</div>
+	</div>
 </div>
 </body>
 </html>
-		
