@@ -28,10 +28,10 @@ define(Root, 'http://'.$host.$rootfile);
 $settime = "Asia/Tehran";
 date_default_timezone_set($settime);
 
-// add display error on
+// if is On show all error made with php if you dont to show it just swtich to Off
 ini_set('display_errors', 'On');
 
-// Class for coonet to DataBase
+// Setting your host database information
 $hostname = "localhost";
 $usernamehost = "root";
 $passwordhost = "SaDeGh.66";
