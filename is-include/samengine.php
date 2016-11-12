@@ -59,16 +59,16 @@ $hook_list = array();
 function add_hook($hook_name ,$do_something ){
 	global $hook_list;
 	
-	$hook_list[$hook_name] = ($do_something);
+	$hook_list[] = array($hook_name,$do_something);
 }
 
 /* Developer can use it when run a hook submited */
 function do_hook($hook_name){
 	global $hook_list;
 
-	foreach ($hook_list as $key => $value){
-		if ($key == $hook_name):
-			$func = $value;
+	foreach ($hook_list as $key ){
+		if ($key[0] == $hook_name):
+			$func = $key[1];
 		if (function_exists($func)):
 			call_user_func($func);
 		endif;
