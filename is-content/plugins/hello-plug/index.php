@@ -10,7 +10,7 @@ $config = array(
 
 
 function do_something() {
-	$xx = '<label class="label-header">| hello , i am hook , run from hook system.</label>';
+	$xx = '<label class="label-header"> | hello , i am plugin , run from hook system.</label>';
 	echo $xx;
 }
 

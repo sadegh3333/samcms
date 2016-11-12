@@ -26,7 +26,7 @@ class plugin_api
 
 
 	function __construct(){
-
+		$this->run_active_plugin();
 	}
 
 

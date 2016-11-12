@@ -31,8 +31,6 @@ require('is-include/template-class.php');
 
 $plugins = new plugin_api();
 
-$plugins->run_active_plugin();
-
 $mu = new user();
 
 $pst = new post();
