@@ -2,12 +2,12 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2013
- * @since October 2013
- * @version 0.3.0 Beta
+ * @copyright October 2013 - November 2016
+ * @since 0.2.0
+ * @version 0.4.0 Beta
  */
 
-class post
+class document
 {
     var $pstcnt;
 

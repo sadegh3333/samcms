@@ -30,7 +30,7 @@ $cat = new category();
 		<div class="edit-box">
 			<h3 class="title"> All Document </h3> 
 			<?php
-			$sap = new post();
+			$sap = new document();
 			$show = $sap->showallpost();
 
 			?>

@@ -21,9 +21,8 @@ session_start();
 
 require_once('config.php');
 require_once('is-include/samengine.php');
-require('is-include/jdf.php');
 require('is-include/class.user.php');
-require('is-include/class.post.php');
+require('is-include/class.document.php');
 require('is-include/class.category.php');
 require('is-include/class.plugin.php');
 require('is-include/class.template.php');
@@ -33,7 +32,7 @@ $plugins = new plugin_api();
 
 $mu = new user();
 
-$pst = new post();
+$pst = new document();
 
 $cat = new category();
 
