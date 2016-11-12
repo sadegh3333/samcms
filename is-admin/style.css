@@ -15,8 +15,8 @@
 
 
 
- /* latin-ext */
- @font-face{
+/* latin-ext */
+@font-face{
     font-family: 'lato-light';
     font-style: normal;
     src:url('../is-include/fonts/Lato-Light.ttf')format('truetype');;
@@ -323,9 +323,12 @@ li{
     padding: 10px;
     border-bottom:1px #eee solid; 
 }
-.show-box-title-category div:nth-child(1){
+.show-box-title-category div{
     border-right: 1px #eee solid;
     margin-right: 1px; 
+}
+.show-box-title-category div:last-child{
+    border-right: none;
 }
 .show-category-box li {
     padding: 10px;

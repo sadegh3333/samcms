@@ -1,13 +1,6 @@
 <?php 
 
 
-// Configuration part
-$config = array(
-	'plugin_name' => 'hello-plug',
-	'version' => '0.2.0',
-	'description' => 'This is the First Plugin of samcms.'
-	);
-
 add_hook('hello_hook' , 'do_something');
 add_hook('hello_hook' , 'do_something_1');
 

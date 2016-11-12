@@ -58,32 +58,39 @@ if (isset($_POST['disable'])) {
 			?>
 			<div class="row">
 				
-				<div class="col-xs-8 show-category-box ">
+				<div class="col-md-12 show-category-box ">
 					<div class="row show-box-title-category">
-						<div class="col-xs-2">
-							Id
+						<div class="col-md-3">
+							Plugins
 						</div>
-						<div class="col-xs-6">
-							Name plugin
+						<div class="col-md-6">
+							Description
 						</div>
-						<div class="col-xs-2">
-							Status plugin
+						<div class="col-md-1">
+							Version
+						</div>
+						<div class="col-md-1">
+							Status
 						</div>
 					</div>
 					<?php 
 					$gap = $plugins->get_all_plugin();
 					foreach ($gap as $key) {
+						include(PLUG_DIR.$plugins->get_single_plugin_config_file($key['name_plugin']));
 						?>
 						<form action="plugin.php" method="POST">
 							<li class="row show-category-data">
-								<div class="col-xs-2">
+								<div class="col-md-3">
 									<input type="hidden" name="plugin-id" value="<?php echo $key['id']; ?>">
-									<?php echo $key['id']; ?>
+									<?php echo $config['plugin_name'];?>
 								</div>
-								<div class="col-xs-6">
-									<?php echo $key['name_plugin']; ?>
+								<div class="col-md-6">
+									<?php echo $config['description']; ?>
+								</div>
+								<div class="col-md-1">
+									<?php echo $config['version']; ?>
 								</div>	
-								<div class="col-xs-2">
+								<div class="col-md-1">
 									<?php
 									$status_plugin = $key['status_plugin'];
 									if ($status_plugin) {

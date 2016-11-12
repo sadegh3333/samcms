@@ -5,7 +5,7 @@
  * @author Sadegh Mahdilou
  * @copyright November 2016
  * @since version 0.4.0
- * @version 0.2.0 Beta
+ * @version 0.4.0 Beta
  *
  */
 
@@ -114,6 +114,10 @@ class plugin_api
 		return $plugin_root.'/index.php';
 	}
 
+	public function get_single_plugin_config_file($plugin_root){
+		return $plugin_root.'/config.php';
+	}
+
 	public function check_status($plugin_name){
 		global $dbc;
 		$plugin_name = $plugin_name;
@@ -131,10 +135,6 @@ class plugin_api
 
 		return $plugins_list;
 	}
-
-
-
-
 
 
 
