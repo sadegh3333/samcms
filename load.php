@@ -46,7 +46,12 @@ $template = new template();
 
 
 if (isset($_GET['id'])) {
+	$post_id = $_GET['id'];
+	$get_post = $pst->getpost($post_id);
+	$title = $get_post['title'];
+
 	include('is-content/theme/single.php');
+
 }
 else{
 // inlcude main file for theme

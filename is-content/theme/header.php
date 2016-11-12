@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>samcms -- Content Managment System</title>
+	<?php if (isset($title)): ?>
+		<title><?php echo $title; ?></title>
+	<?php else: ?>
+		<title>samcms -- Content Managment System</title>
+	<?php endif; ?>
 	<?php $template->load_bootstarp(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $template->get_template_directory(); ?>style.css">
 </head>

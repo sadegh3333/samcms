@@ -1,24 +1,13 @@
 <?php include('header.php') ?>
 
-<?php 
-
-$post_id = $_GET['id'];
-
-?>
-
 <div class="container-fluid  main-page">
 
 	<div class="container">
 		<div class="col-md-12 post">
-			<?php 
-
-			$get_post = $pst->getpost($post_id);
-
-			?>
 
 
 			<div class="title">
-			<h3><?php echo $get_post['title']; ?></h3>
+				<h3><?php echo $get_post['title']; ?></h3>
 			</div>
 			<div class="details">
 				<span><i class="fa fa-book"></i>  Author: <?php echo $get_post['author']; ?></span>
