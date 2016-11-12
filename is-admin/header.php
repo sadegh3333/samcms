@@ -11,8 +11,9 @@
 <?php 
 session_start();
 
-require_once('../is-include/config.php');
-require('../is-include/function.php');
+
+require_once('../config.php');
+require_once('../is-include/samengine.php');
 require('../is-include/jdf.php');
 require('../is-include/user-class.php');
 require('../is-include/post-class.php');

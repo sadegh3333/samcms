@@ -9,9 +9,9 @@
 
 
 session_start();
-require_once('../is-include/config.php');
+require_once('../config.php');
 require_once('../is-include/user-class.php');
-require('../is-include/function.php');
+require('../is-include/samengine.php');
 
 if(isset($_POST['username']))$username = safe($_POST['username'],1);
 if(isset($_POST['password']))$password = safe($_POST['password'],1);

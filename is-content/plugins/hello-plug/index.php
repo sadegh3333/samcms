@@ -5,6 +5,7 @@
 $config = array(
 	'plugin_name' => 'hello-plug',
 	'version' => '0.2.0',
+	'description' => 'This is the First Plugin of samcms.'
 	);
 
 

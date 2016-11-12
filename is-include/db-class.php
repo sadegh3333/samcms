@@ -15,7 +15,7 @@ class db
     function connectdb($hostname, $usernamehost, $passwrodhost, $databasename)
     {
         $this->connection = mysqli_connect($hostname, $usernamehost, $passwrodhost, $databasename) or
-            die(mysqli_error());
+        die(mysqli_error());
     }
     
     function close(){
@@ -39,4 +39,9 @@ class db
     }
     
 }
+
+// Create query to connect to DB ,  We use mysqli
+$dbc = new db();
+$dbc->connectdb($hostname, $usernamehost, $passwordhost, $databasename);
+$dbc->query("SET CHARACTER SET utf8;");
 ?>

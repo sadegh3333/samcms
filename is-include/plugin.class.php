@@ -106,9 +106,8 @@ class plugin_api
 		$q = $dbc->query("SELECT * FROM `plugins` WHERE status_plugin='1'");
 
 		foreach ($q as $key) {
-			include(PLUG_DIR.'/'.$this->get_single_plugin_index_file($key['name_plugin']));
+			include(PLUG_DIR.$this->get_single_plugin_index_file($key['name_plugin']));
 		}
-
 	}
 
 	public function get_single_plugin_index_file($plugin_root){
