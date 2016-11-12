@@ -34,7 +34,7 @@ ini_set('display_errors', 'On');
 $hostname = "localhost";
 $usernamehost = "root";
 $passwordhost = "SaDeGh.66";
-$databasename = "saminstall";
+$databasename = "samcmsdb";
 
 require_once('is-include/class.database.php');
 
