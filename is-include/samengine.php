@@ -43,8 +43,7 @@ function safe($value,$type='0'){
 
 
 
-/*
-*
+/**
 *	add_hook is working hook system. when developer add something
 *	can run with do_hook functions every where.
 *	Every hook store in this array and when include by do_hook do working.
@@ -79,7 +78,12 @@ function do_hook($hook_name){
 }
 
 
-/* Function for get bootsrap files */
+/**
+*	Function for get bootstrap files. 
+*	Developer can use this function for get bootstrap in theme.
+* 
+*	@Since 0.3.0
+*/
 function Get_bootstarp(){
 	?>
 	<!-- add css bootstrap files -->
