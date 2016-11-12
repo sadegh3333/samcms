@@ -30,7 +30,7 @@ $cat = new category();
 
         <?php
 
-        $pst = new post();
+        $pst = new document();
         $id = $_GET['id'];
         if (isset($_POST['mission']))
         {
