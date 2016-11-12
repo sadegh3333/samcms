@@ -10,7 +10,7 @@
 
 
 // Version Stats
-$samcms_version = '0.6.10';
+$samcms_version = '0.6.11';
 $channel_release = 'Beta';
 $code_name = 'Rasmus Lerdorf';
 $link_code_name = 'https://en.wikipedia.org/wiki/Rasmus_Lerdorf';
@@ -36,7 +36,7 @@ $usernamehost = "root";
 $passwordhost = "SaDeGh.66";
 $databasename = "samcmsdb";
 
-require_once('is-include/db-class.php');
+require_once('is-include/class.database.php');
 
 
 define( 'Root_Dir', dirname( __FILE__ ) . '/' );
