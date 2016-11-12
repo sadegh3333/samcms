@@ -8,6 +8,11 @@ $config = array(
 	);
 
 
+function do_something() {
+	$xx = '<label class="label-header">| hello , i am hook , run from hook system.</label>';
+	echo $xx;
+}
 
-echo 'hello i am plugin ';
+
+add_hook('hello_hook' , 'do_something');
 ?>

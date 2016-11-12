@@ -25,7 +25,6 @@ class plugin_api
 	public $status_plugin;
 
 
-
 	function __construct(){
 
 	}
@@ -79,11 +78,11 @@ class plugin_api
 		$a = array_diff($all_in_db, $getall);
 
 		foreach ($a as $key ) {
-			
+
 			$remove =  $dbc->query("DELETE FROM `plugins` WHERE name_plugin='$key' LIMIT 1 ");
 
 		}
-		
+
 		$plugin_check = array();
 		return $plugin_check;
 	}
@@ -133,6 +132,14 @@ class plugin_api
 
 		return $plugins_list;
 	}
+
+
+
+
+
+
+
+
 
 
 

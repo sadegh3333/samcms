@@ -43,4 +43,31 @@ function Get_bootstarp(){
 }
 
 
-?>
+global $hook_list;
+$hook_list = array();
+
+	// add_hook is working hook system. when developer add something
+	// can run with do_hook functions every where.
+	// Every hook store in this array and when include by do_hook do working.
+function add_hook($hook_name ,$do_something ){
+	global $hook_list;
+	
+	$hook_list[$hook_name] = ($do_something);
+}
+
+function do_hook($hook_name){
+	global $hook_list;
+
+	foreach ($hook_list as $key => $value):
+		if ($key == $hook_name):
+			$func = $value;
+		if (function_exists($func)):
+			call_user_func($func);
+		endif;
+		endif;
+		endforeach;
+
+	}
+
+
+	?>

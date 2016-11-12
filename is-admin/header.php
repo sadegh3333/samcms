@@ -46,26 +46,29 @@ $mu = new user();
 							Home
 						</a>
 					</li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a class="btn" href="login.php?action=logout"><i class="fa fa-power-off"></i> Logout </a>
-						</li>
-					</ul>
-				<?php else: ?>
 					<li>
-						<a class="btn" href="<?php echo Root; ?>">
-							Home
-						</a>
+						<?php do_hook('hello_hook');?>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="right">
-						<a class="btn" href="">Sign Up</a>
+					<li>
+						<a class="btn" href="login.php?action=logout"><i class="fa fa-power-off"></i> Logout </a>
 					</li>
 				</ul>
-			<?php endif; ?>
-		</div>
+			<?php else: ?>
+				<li>
+					<a class="btn" href="<?php echo Root; ?>">
+						Home
+					</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="right">
+					<a class="btn" href="">Sign Up</a>
+				</li>
+			</ul>
+		<?php endif; ?>
 	</div>
-	<div class="container-fluid">
+</div>
+<div class="container-fluid">
 
