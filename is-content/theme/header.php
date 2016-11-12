@@ -49,6 +49,9 @@
 							Admin Panel
 						</a>
 					</li>
+					<li>
+						<?php do_hook('hello_hook');?>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="right">

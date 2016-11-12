@@ -26,6 +26,7 @@ if (isset($_POST['enable'])) {
 	$plugin_id = $_POST['plugin-id'];
 
 	$plugins->enable_plugin($plugin_id);
+	header('Location: plugin.php');
 }
 
 
@@ -33,6 +34,8 @@ if (isset($_POST['disable'])) {
 	$plugin_id = $_POST['plugin-id'];
 
 	$plugins->disable_plugin($plugin_id);
+	header('Location: plugin.php');
+
 }
 
 ?>
@@ -84,10 +87,10 @@ if (isset($_POST['disable'])) {
 									<?php
 									$status_plugin = $key['status_plugin'];
 									if ($status_plugin) {
-										echo '<input type="submit" name="disable" value="Disable" >';
+										echo '<input class="btn btn-warning" type="submit" name="disable" value="Disable" >';
 									}
 									else{
-										echo '<input type="submit" name="enable" value="Enable" >';
+										echo '<input class="btn btn-success" type="submit" name="enable" value="Enable" >';
 									}
 									?>
 								</div>
