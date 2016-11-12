@@ -10,7 +10,7 @@
 
 session_start();
 require_once('../config.php');
-require_once('../is-include/user-class.php');
+require_once('../is-include/class.user.php');
 require('../is-include/samengine.php');
 
 if(isset($_POST['username']))$username = safe($_POST['username'],1);
