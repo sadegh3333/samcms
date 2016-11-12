@@ -40,6 +40,8 @@ $mu = new user();
 
 $pst = new post();
 
+$cat = new category();
+
 $template = new template();
 
 

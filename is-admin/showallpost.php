@@ -32,7 +32,7 @@ $cat = new category();
 			<?php
 			$sap = new post();
 			$show = $sap->showallpost();
-print_r($show);
+
 			?>
 			<div class="row">
 				<div class="title_document_header">

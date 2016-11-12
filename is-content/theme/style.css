@@ -71,6 +71,45 @@
  	font-weight: 200;
  	font-size: 14px;
  }
+
+
+ .post {
+ 	padding: 40px 50px;
+ 	border: 1px rgba(221, 221, 221, 0) solid;
+ 	background-color: rgba(238, 238, 238, 0.38);
+ 	box-shadow: 0px 0px 3px rgb(221, 221, 221);
+ 	margin-top: 50px;
+ }
+ .post .title {
+ 	padding-left: 0px;
+ }
+ .post .title h3 {
+ 	margin: 20px 0px 0px;
+ 	font-size: 40px;
+ 	font-weight: 300;
+ }
+ .post .details {
+ 	border-bottom: 1px #eee solid;
+ 	padding: 3px 5px 0px 0px;
+ 	margin-bottom: 10px;
+ }
+ .post .details span {
+ 	padding-right: 15px;
+ 	padding-left: 5px;
+ 	font-weight: 300;
+ 	color: rgba(51, 51, 51, 0.72);
+ }
+ .post .content {
+ 	padding: 10px;
+ 	font-size: 15px;
+ 	font-weight: 400;
+ }
+ .post .tags {
+ 	border-top: 1px rgba(221, 221, 221, 0.24) solid;
+ 	padding: 10px 20px;
+ }
+
+
  .copyright {
  	background-color: rgba(220, 220, 220, 0.33);
  	padding: 10px 0px;
