@@ -10,7 +10,7 @@
 
 
 // Version Stats
-$samcms_version = '0.6.15';
+$samcms_version = '0.7.0';
 $channel_release = 'Beta';
 $code_name = 'Rasmus Lerdorf';
 $link_code_name = 'https://en.wikipedia.org/wiki/Rasmus_Lerdorf';
@@ -34,7 +34,7 @@ ini_set('display_errors', 'On');
 $hostname = "localhost";
 $usernamehost = "root";
 $passwordhost = "SaDeGh.66";
-$databasename = "samcmsdb";
+$databasename = "saminstall";
 
 require_once('is-include/class.database.php');
 

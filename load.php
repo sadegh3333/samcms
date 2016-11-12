@@ -20,39 +20,69 @@
 session_start();
 
 require_once('config.php');
-require_once('is-include/samengine.php');
-require('is-include/class.user.php');
-require('is-include/class.document.php');
-require('is-include/class.category.php');
-require('is-include/class.plugin.php');
-require('is-include/class.template.php');
+require_once('is-include/auto.install.php');
 
+/**
+*	Check samcms is installed
+*	if yes go next,
+*	else go to install proccess.
+*/
 
-$plugins = new plugin_api();
+global $dbc;
 
-$mu = new user();
+if (!$dbc->query("SELECT * FROM `metauser`")){
 
-$pst = new document();
+	if (!isset($_POST['runfordone'])) {
+	install_step();
+	}
+	else{
+		install_samcms();
+		header('Location: index.php');
+	}	
 
-$cat = new category();
-
-$template = new template();
-
-
-if (isset($_GET['id'])) {
-	$post_id = $_GET['id'];
-	$get_post = $pst->getpost($post_id);
-	$title = $get_post['title'];
-
-	include('is-content/theme/single.php');
 
 }
 else{
+
+
+
+	require_once('is-include/samengine.php');
+	require('is-include/class.user.php');
+	require('is-include/class.document.php');
+	require('is-include/class.category.php');
+	require('is-include/class.plugin.php');
+	require('is-include/class.template.php');
+
+
+	$plugins = new plugin_api();
+
+	$mu = new user();
+
+	$pst = new document();
+
+	$cat = new category();
+
+	$template = new template();
+
+
+
+
+
+	if (isset($_GET['id'])) {
+		$post_id = $_GET['id'];
+		$get_post = $pst->getpost($post_id);
+		$title = $get_post['title'];
+
+		include('is-content/theme/single.php');
+
+	}
+	else{
 // inlcude main file for theme
-	include('is-content/theme/index.php');
+		include('is-content/theme/index.php');
+	}
+
+
 }
-
-
 
 
 ?>

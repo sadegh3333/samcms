@@ -23,7 +23,7 @@ class db
     }
     function query($sql)
     {
-        $backq = mysqli_query($this->connection, $sql) or die(mysqli_error());
+        $backq = mysqli_query($this->connection, $sql);
         return $backq;
     }
 
