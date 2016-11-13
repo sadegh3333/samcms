@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright November 2016
  * @since 0.7.0
- * @version 0.2.0 Beta
+ * @version 0.3.0 Beta
  *
  */
 
@@ -174,9 +174,6 @@ function install_samcms(){
 		");
 	$dbc->query("INSERT INTO `metauser` (`id`, `name`, `lastname`, `username`, `password`, `email`, `age`, `tel`, `gender`, `ip`, `logindate`) VALUES
 		(1, 'sadegh', 'Mahdilou', 'admin', '356a192b7913b04c54574d18c28d46e6395428ab', 'sadegh3333@gmail.com', 0, 0, '', '', '1478983873');
-		");
-	$dbc->query("INSERT INTO `plugins` (`id`, `name_plugin`, `status_plugin`) VALUES
-		(40, 'hello-plug', 1);
 		");
 
 	$dbc->query("ALTER TABLE `category`
