@@ -1,7 +1,7 @@
 # samcms
 
 ### samcms -- Content Management System
-This is a simple and small core CMS for known about make and use a CMS for making a website.
+This is samcms. fast, reliable, easy to use and speedy in development.
 
 ### Release Version
   
