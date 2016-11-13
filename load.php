@@ -5,7 +5,7 @@
  * @copyright 2016
  * @since  Nov 2016
  * @since version 0.4.0
- * @version 0.2.0 Beta
+ * @version 0.5.0 Beta
  */
 
 
@@ -33,7 +33,7 @@ global $dbc;
 if (!$dbc->query("SELECT * FROM `metauser`")){
 
 	if (!isset($_POST['runfordone'])) {
-	install_step();
+		install_step();
 	}
 	else{
 		install_samcms();

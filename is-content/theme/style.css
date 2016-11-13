@@ -11,7 +11,7 @@
  @font-face{
  	font-family: 'lato-light';
  	font-style: normal;
- 	src:url('../is-include/fonts/Lato-Light.ttf')format('truetype');;
+ 	src:url('../../is-include/fonts/Lato-Light.ttf')format('truetype');;
  }
  body{
  	font-family: 'lato-light' !important;
