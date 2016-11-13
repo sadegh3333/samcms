@@ -13,7 +13,7 @@
 				Version <?php echo  $samcms_version; ?> <span><?php echo $channel_release; ?></span>
 			</h4>
 			<h5>
-				This Version Prudly Presented to <a target="_Blank" href="<?php echo $link_code_name ?>"><?php echo $code_name; ?></a>
+				This Version Proudly Presented to <a target="_Blank" href="<?php echo $link_code_name ?>"><?php echo $code_name; ?></a>
 			</h5>
 		</div>
 	</div>
