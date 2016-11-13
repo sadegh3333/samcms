@@ -10,11 +10,10 @@
 
 
 
-/*
-*	
+/**
 *	This is load file, when access to root site url
 *	load file loaded theme and another thing.
-*
+* 
 */
 
 session_start();
