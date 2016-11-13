@@ -61,6 +61,8 @@ require('is-include/class.plugin.php');
 require('is-include/class.template.php');
 
 
+
+
 $plugins = new plugin_api();
 
 $mu = new user();
