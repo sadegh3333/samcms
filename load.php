@@ -18,7 +18,10 @@
 
 session_start();
 
+/* Require config.php file, if it isnt exist system wont be work. */
 require_once('config.php');
+
+/* include Auto-install file for check system is installed or if it doesnt install it.  */
 require_once('is-include/auto.install.php');
 
 /**
@@ -29,6 +32,11 @@ require_once('is-include/auto.install.php');
 
 global $dbc;
 
+/*
+*	Check the system is installed or not.  
+*	How does it work. when user access to root system check the metauser table exist or not.
+*	if not go to installing proccess. or if system is installed so go to else part and run system.
+*/
 if (!$dbc->query("SELECT * FROM `metauser`")){
 
 	if (!isset($_POST['runfordone'])) {
@@ -38,47 +46,51 @@ if (!$dbc->query("SELECT * FROM `metauser`")){
 		install_samcms();
 		header('Location: index.php');
 	}	
-
-
 }
 else{
 
+/**
+*	Include neccessary files,
+*
+*/
+require_once('is-include/samengine.php');
+require('is-include/class.user.php');
+require('is-include/class.document.php');
+require('is-include/class.category.php');
+require('is-include/class.plugin.php');
+require('is-include/class.template.php');
 
 
-	require_once('is-include/samengine.php');
-	require('is-include/class.user.php');
-	require('is-include/class.document.php');
-	require('is-include/class.category.php');
-	require('is-include/class.plugin.php');
-	require('is-include/class.template.php');
+$plugins = new plugin_api();
 
+$mu = new user();
 
-	$plugins = new plugin_api();
+$pst = new document();
 
-	$mu = new user();
+$cat = new category();
 
-	$pst = new document();
-
-	$cat = new category();
-
-	$template = new template();
+$template = new template();
 
 
 
 
+/**
+*	Show page to user when user access to single post show single page.
+*	and if its home page show home page.
+*
+*/
+if (isset($_GET['id'])) {
+	$post_id = $_GET['id'];
+	$get_post = $pst->getpost($post_id);
+	$title = $get_post['title'];
 
-	if (isset($_GET['id'])) {
-		$post_id = $_GET['id'];
-		$get_post = $pst->getpost($post_id);
-		$title = $get_post['title'];
+	include('is-content/theme/single.php');
 
-		include('is-content/theme/single.php');
-
-	}
-	else{
-// inlcude main file for theme
-		include('is-content/theme/index.php');
-	}
+}
+else{
+	/* Inlcude main file ( Home page ) */
+	include('is-content/theme/index.php');
+}
 
 
 }
