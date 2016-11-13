@@ -9,7 +9,7 @@ This is a simple and small core CMS for known about make and use a CMS for makin
   
   This Version Proudly Presented to Rasmus Lerdorf
 
-  - Plugins Managment
+  - Plugins Management
   - Hook System
   - user Theme
   - Auto install
@@ -22,8 +22,7 @@ This is a simple and small core CMS for known about make and use a CMS for makin
 ---------------------------------------------------------------------------------------------
   version 0.2.0 Beta
   
+  its beginning...
 
 ### License
-The samcms is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-</br>
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+The samcms is open-sourced software licensed under the [GPL-3.0](http://www.gnu.org/licenses/gpl.html)
