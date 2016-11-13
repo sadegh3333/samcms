@@ -8,6 +8,10 @@
  *
  */
 
+/**
+*	This is Configuration file.
+*	Please dont change it if you dont about how to setting it.
+*/
 
 /* Version Stats */
 $samcms_version = '0.7.1';
