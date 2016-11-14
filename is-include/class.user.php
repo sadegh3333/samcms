@@ -3,8 +3,8 @@
 /**
  * @author Sadegh Mahdilou
  * @copyright 2016
- * @since October 2013 - 2016 june
- * @version 0.6.1 Beta
+ * @since October 2013 - 2016 November
+ * @version 0.15.0 Beta
  */
 
 
@@ -29,6 +29,14 @@ class user
 
 
     /**
+    *   Store all user capabilities in this array.
+    *
+    *   @Since 0.9.1
+    */
+    public $user_capabilities = array();  
+
+
+    /**
     *   when create a user object run this function.
     *   Set the default settings
     *
@@ -39,6 +47,8 @@ class user
        /* Set user roles default */
        $this->user_role_list['administrator'] = 100;
        $this->user_role_list['user'] = 0;
+
+
 
        $user = array(
         'username' => '',
@@ -170,15 +180,84 @@ class user
     *
     *   @Since 0.8.0
     */
-    public function get_user_role($user_id){
-        global $dbc;
+    public function get_user_role($username){
 
-        $user = $dbc->query("SELECT * FROM `metauser` WHERE id='$user_id'");
-
-        $role = $dbc->fetch($user);
-
+        $role = $this->user_info($username);
         return  array_search($role['role'], $this->user_role_list);
     }
 
+
+
+    /**
+    *   add user capabilities for single user
+    *
+    *   @Since 0.9.1
+    */
+    public function add_user_capabilities($cap){
+
+        $this->user_capabilities[] = $cap;
+    }
+
+
+    /**
+    *   Return user capabilities for single user
+    *
+    *   @Since 0.9.1
+    */
+    public function get_user_capabilities($username){
+
+        return $this->user_capabilities;
+    }
+
+
+    /**
+    *   Return check user is admin
+    *
+    *   @Since 0.9.1
+    */
+    public function is_admin($username){
+
+        $user_info =  $this->user_info($username);
+
+        if ($user_info['role'] == 100 ) {
+           return true;
+       }
+       else {
+           return false;
+       }
+
+   }
+
+
+    /**
+    *   Return data user 
+    *
+    *   @Since 0.9.1
+    */
+    public function user_info($username){
+        global $dbc;
+
+        $user = $dbc->query("SELECT * FROM `metauser` WHERE username='$username'");
+
+        $user_info = $dbc->fetch($user);
+
+        return $user_info;
+    }
+
+
+    /**
+    *   Return This user username ( if is logged-in ) 
+    *
+    *   @Since 0.9.1
+    */
+    public function this_user_username(){
+
+        if (isset($_SESSION['username'])) {
+            return $_SESSION['username'];
+        }
+        else {
+            return false;
+        }
+    }
 }
 ?>
