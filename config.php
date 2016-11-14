@@ -53,7 +53,7 @@ $usernamehost = "root";
 $passwordhost = "SaDeGh.66"; 
 
 /* Set your database name, you must make it in you host */
-$databasename = "saminstall"; 
+$databasename = "samcmsdb"; 
 
 
 /**
