@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2016
  * @since October 2013 - 2016 june
- * @version 0.6.0 Beta
+ * @version 0.6.1 Beta
  */
 
 
@@ -46,113 +46,139 @@ class user
         'state' =>'logout'
         );
  }
- function login($username = '', $password = '')
- {
-    global $dbc;
-    $logindate = time();
-    echo ('get username is : ' . $username . ' password : ' . $password . '<br />');
-    if (!empty($username) && !empty($password))
+
+    /**
+    *   Login user , check username and password if is correct set a session
+    *
+    *   @Since 0.2.0
+    */
+
+    function login($username = '', $password = '')
     {
-        echo ('this is ok');
-        $q = $dbc->query("SELECT `username`,`password` FROM `metauser` WHERE username = '$username' LIMIT 1");
-        $res = $dbc->fetch($q);
-        $user = $res['username'];
-        $pass = $res['password'];
-        echo ('The user is : ' . $user . ' Pass : ' . $pass . '<br />');
-        if ($username == $user and sha1($password) == $pass)
+        global $dbc;
+        $logindate = time();
+        echo ('get username is : ' . $username . ' password : ' . $password . '<br />');
+        if (!empty($username) && !empty($password))
         {
-            echo ('Welcome my legend!');
-            $q1 = $dbc->query("UPDATE `metauser` SET `ip`='$ip',`logindate`='$logindate' WHERE `username`='$user'");
-            $_SESSION['username'] = $username;
-            setcookie('username', $username, time() + 18000);
-            header('location: index.php');
+            echo ('this is ok');
+            $q = $dbc->query("SELECT `username`,`password` FROM `metauser` WHERE username = '$username' LIMIT 1");
+            $res = $dbc->fetch($q);
+            $user = $res['username'];
+            $pass = $res['password'];
+            echo ('The user is : ' . $user . ' Pass : ' . $pass . '<br />');
+            if ($username == $user and sha1($password) == $pass)
+            {
+                echo ('Welcome my legend!');
+                $q1 = $dbc->query("UPDATE `metauser` SET `ip`='$ip',`logindate`='$logindate' WHERE `username`='$user'");
+                $_SESSION['username'] = $username;
+                setcookie('username', $username, time() + 18000);
+                header('location: index.php');
+            }
         }
     }
-}
-function logout()
-{
-    session_destroy();
-    header('location: index.php');
-}
 
-function check_user_stat() {
-    if (isset($_SESSION['username'])) {
-        return $userstat = 'logedin';
+
+    /**
+    *   logout user, when run this function session will destroy and user logout.
+    *
+    *   @Since 0.2.0
+    */
+    function logout()
+    {
+        session_destroy();
+        header('location: index.php');
     }
-    else{
-        return $userstat = 'logedout';
+
+
+    /**
+    *   Cehck the user stat, is logged in or not.
+    *
+    *   @Since 0.2.0
+    */
+    function check_user_stat() {
+        if (isset($_SESSION['username'])) {
+            return $userstat = 'logedin';
+        }
+        else{
+            return $userstat = 'logedout';
+        }
     }
-}
-
-function get_userdata($username) {
-    global $dbc;
-    
-    $userdata = array();
-    $q = $dbc->query("SELECT * FROM `metauser` WHERE username ='$username'");
-
-    $res = $dbc->fetch($q);
-    $this->userdata = array(
-        'username' => $res['username'],
-        );
-}
 
 
-/**
-*   Return all users registered in database
-*
-*   @Since 0.7.2
-*/
-public function get_all_user_list(){
-    global $dbc;
+    /**
+    *   Get signle user data.
+    *
+    *   @Since 0.2.0
+    */
+    function get_userdata($username) {
+        global $dbc;
 
-    $user_list = $dbc->query("SELECT * FROM `metauser`");
+        $userdata = array();
+        $q = $dbc->query("SELECT * FROM `metauser` WHERE username ='$username'");
 
-    return $user_list;
-}
-
-
-/**
-*   Add a new Role for users
-*
-*   @Since 0.8.0
-*/
-public function add_role(){
+        $res = $dbc->fetch($q);
+        $this->userdata = array(
+            'username' => $res['username'],
+            );
+    }
 
 
-}
+    /**
+    *   Return all users registered in database
+    *
+    *   @Since 0.7.2
+    */
+    public function get_all_user_list(){
+        global $dbc;
 
-/**
-*   Set a Role for single user
-*
-*   @Since 0.8.0
-*/
-public function set_role(){
+        $user_list = $dbc->query("SELECT * FROM `metauser`");
 
-}
+        return $user_list;
+    }
 
-/**
-*   Remove a Role for single user
-*
-*   @Since 0.8.0
-*/
-public function remove_role(){
 
-}
+    /**
+    *   Add a new Role for users
+    *
+    *   @Since 0.8.0
+    */
+    public function add_role(){
 
-/**
-*   Return user Role from single user
-*
-*   @Since 0.8.0
-*/
-public function get_user_role($user_id){
-    global $dbc;
 
-    $user = $dbc->query("SELECT * FROM `metauser` WHERE id='$user_id'");
+    }
 
-    $role = $dbc->fetch($user);
-    
-    return  array_search($role['role'], $this->user_role_list);
-}
+    /**
+    *   Set a Role for single user
+    *
+    *   @Since 0.8.0
+    */
+    public function set_role(){
+
+    }
+
+    /**
+    *   Remove a Role for single user
+    *
+    *   @Since 0.8.0
+    */
+    public function remove_role(){
+
+    }
+
+    /**
+    *   Return user Role from single user
+    *
+    *   @Since 0.8.0
+    */
+    public function get_user_role($user_id){
+        global $dbc;
+
+        $user = $dbc->query("SELECT * FROM `metauser` WHERE id='$user_id'");
+
+        $role = $dbc->fetch($user);
+
+        return  array_search($role['role'], $this->user_role_list);
+    }
 
 }
 ?>
