@@ -51,6 +51,7 @@ $cat = new category();
 						<ul>
 						<li class="col-md-3"><?php echo $key['name'].' '.$key['lastname']; ?></li>
 						<li class="col-md-3"><?php echo $key['email']; ?></li>
+						<li class="col-md-3"><?php echo $mu->get_user_role($key['id']); ?></li>
 						</ul>
 					</div>
 				<?php endforeach; endif; ?>

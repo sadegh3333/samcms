@@ -4,12 +4,42 @@
  * @author Sadegh Mahdilou
  * @copyright 2016
  * @since October 2013 - 2016 june
- * @version 0.3.0 Beta
+ * @version 0.6.0 Beta
  */
 
+
+
+/**
+*   This is User Class,
+*   Everything we need to work with user is here.
+*
+*/
 class user
 {
-   function __construct() {
+
+    /**
+    *   Store all user role in this array.
+    *   Default Roles is:
+    *   100.Administrator (GOD user)
+    *   0.simple user (user)
+    *
+    *   @Since 0.8.0
+    */
+    public $user_role_list = array();
+
+
+    /**
+    *   when create a user object run this function.
+    *   Set the default settings
+    *
+    *   @Since 0.2.0
+    */
+    public function __construct() {
+
+     /* Set user roles default */
+     $this->user_role_list['administrator'] = 100;
+     $this->user_role_list['user'] = 0;
+
      $user = array(
         'username' => '',
         'password' => '',
@@ -78,6 +108,50 @@ public function get_all_user_list(){
     $user_list = $dbc->query("SELECT * FROM `metauser`");
 
     return $user_list;
+}
+
+
+/**
+*   Add a new Role for users
+*
+*   @Since 0.8.0
+*/
+public function add_role(){
+
+
+}
+
+/**
+*   Set a Role for single user
+*
+*   @Since 0.8.0
+*/
+public function set_role(){
+
+}
+
+/**
+*   Remove a Role for single user
+*
+*   @Since 0.8.0
+*/
+public function remove_role(){
+
+}
+
+/**
+*   Return user Role from single user
+*
+*   @Since 0.8.0
+*/
+public function get_user_role($user_id){
+    global $dbc;
+
+    $user = $dbc->query("SELECT * FROM `metauser` WHERE id='$user_id'");
+
+    $role = $dbc->fetch($user);
+    
+    return  array_search($role['role'], $this->user_role_list);
 }
 
 }
