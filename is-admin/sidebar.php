@@ -2,9 +2,10 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2015
- * @since January 2013 - 2015 December 
- * @version 0.6.1 Beta
+ * @copyright January 2013 - 2016 November
+ * @since 0.2.0
+ * @version 0.7.0 Beta
+ *
  */
 
 
@@ -28,6 +29,9 @@
 		</li>
 		<li>
 			<a href="<?php echo Root.'/is-admin/plugin.php'; ?>"><i class="fa fa-plus-circle"></i>Plugins</a>
+		</li>
+		<li>
+			<a href="<?php echo Root.'/is-admin/users.php'; ?>"><i class="fa fa-user"></i>Users</a>
 		</li>
 	</ul>
 </div>
