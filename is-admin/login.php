@@ -15,10 +15,11 @@ require('../is-include/samengine.php');
 
 if(isset($_POST['username']))$username = safe($_POST['username'],1);
 if(isset($_POST['password']))$password = safe($_POST['password'],1);
+
 $mu = new user();
 if($_GET['action'] == 'login')
 {
-	$mu->login($username,$password);
+	$mu->login($username,$password,$ip);
 }
 
 

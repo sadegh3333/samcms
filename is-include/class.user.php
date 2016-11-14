@@ -36,16 +36,16 @@ class user
     */
     public function __construct() {
 
-     /* Set user roles default */
-     $this->user_role_list['administrator'] = 100;
-     $this->user_role_list['user'] = 0;
+       /* Set user roles default */
+       $this->user_role_list['administrator'] = 100;
+       $this->user_role_list['user'] = 0;
 
-     $user = array(
+       $user = array(
         'username' => '',
         'password' => '',
         'state' =>'logout'
         );
- }
+   }
 
     /**
     *   Login user , check username and password if is correct set a session
@@ -53,7 +53,7 @@ class user
     *   @Since 0.2.0
     */
 
-    function login($username = '', $password = '')
+    function login($username = '', $password = '',$ip)
     {
         global $dbc;
         $logindate = time();
