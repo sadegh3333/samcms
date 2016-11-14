@@ -2,10 +2,10 @@
 
 /**
  * @author Sadegh Mahdilou
- * @copyright 2016
- * @since  Nov 2016
- * @since version 0.6.0
- * @version 0.2.0 Beta
+ * @copyright November 2016
+ * @since 0.6.0
+ * @version 0.6.0 Beta
+ *
  */
 
 
@@ -112,6 +112,10 @@ function add_default_cap_to_user(){
 		$mu->user_capabilities[] = 'category';
 		$mu->user_capabilities[] = 'plugins';
 		$mu->user_capabilities[] = 'users';
+		$mu->user_capabilities[] = 'site';
+	}
+
+	if ($mu->get_user_role($user_info['username']) == 'user') {
 		$mu->user_capabilities[] = 'site';
 	}
 }

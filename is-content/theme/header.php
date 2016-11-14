@@ -55,7 +55,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="right">
-						<a class="btn" href="">Sign Up</a>
+						<a class="btn" href="<?php echo Root; ?>/is-admin/metalogin.php">Log-in</a>
 					</li>
 				</ul>
 			<?php endif; ?>

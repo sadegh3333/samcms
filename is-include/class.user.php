@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2016
  * @since October 2013 - 2016 November
- * @version 0.16.0 Beta
+ * @version 0.17.0 Beta
  */
 
 
@@ -82,10 +82,34 @@ class user
                 $q1 = $dbc->query("UPDATE `metauser` SET `ip`='$ip',`logindate`='$logindate' WHERE `username`='$user'");
                 $_SESSION['username'] = $username;
                 setcookie('username', $username, time() + 18000);
-                header('location: index.php');
+                $root = Root;
+                header("location: $root");
             }
         }
     }
+
+
+    
+
+    /**
+    *   add_new_user , prepare user to add new user in metauser table
+    *
+    *   @Since 0.9.21
+    */
+    function add_new_user($username,$password,$email){
+        global $dbc;
+
+        $password = sha1($password);
+
+        if ($dbc->query("INSERT INTO `metauser`
+         (`id`, `name`, `lastname`, `username`, `password`, `email`, `age`, `tel`, `gender`, `ip`, `logindate`, `role`)
+         VALUES(`id`, '', '', '$username', '$password', '$email', 0, 0, '', '', '', 0)")) {
+            return true;
+    }
+    else {
+        return false;
+    }    
+}
 
 
     /**
