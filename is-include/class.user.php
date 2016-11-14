@@ -66,5 +66,19 @@ function get_userdata($username) {
         );
 }
 
+
+/**
+*   Return all users registered in database
+*
+*   @Since 0.7.2
+*/
+public function get_all_user_list(){
+    global $dbc;
+
+    $user_list = $dbc->query("SELECT * FROM `metauser`");
+
+    return $user_list;
+}
+
 }
 ?>

@@ -8,7 +8,6 @@
  *
  */
 
-
 ?>
 
 <div id="sidebar-wrapper">
