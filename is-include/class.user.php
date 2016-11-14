@@ -44,18 +44,18 @@ class user
     */
     public function __construct() {
 
-       /* Set user roles default */
-       $this->user_role_list['administrator'] = 100;
-       $this->user_role_list['user'] = 0;
+     /* Set user roles default */
+     $this->user_role_list['administrator'] = 100;
+     $this->user_role_list['user'] = 0;
 
 
 
-       $user = array(
+     $user = array(
         'username' => '',
         'password' => '',
         'state' =>'logout'
         );
-   }
+ }
 
     /**
     *   Login user , check username and password if is correct set a session
@@ -220,13 +220,13 @@ class user
         $user_info =  $this->user_info($username);
 
         if ($user_info['role'] == 100 ) {
-           return true;
-       }
-       else {
-           return false;
-       }
+         return true;
+     }
+     else {
+         return false;
+     }
 
-   }
+ }
 
 
     /**

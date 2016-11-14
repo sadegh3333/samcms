@@ -96,3 +96,22 @@ function Get_bootstarp(){
 	<script type="text/javascript" src="<?php echo Root.'/is-include/js/bootstrap.min.js'; ?>"></script>
 	<?php	
 }
+
+
+
+
+function add_default_cap_to_user(){
+
+	global $mu;
+
+	$user_info = $mu->user_info($mu->this_user_username());
+	if ($mu->get_user_role($user_info['username']) == 'administrator') {
+		$mu->user_capabilities[] = 'admin_bar';
+		$mu->user_capabilities[] = 'dashboard';
+		$mu->user_capabilities[] = 'posts';
+		$mu->user_capabilities[] = 'category';
+		$mu->user_capabilities[] = 'plugins';
+		$mu->user_capabilities[] = 'users';
+		$mu->user_capabilities[] = 'site';
+	}
+}

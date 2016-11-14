@@ -338,3 +338,19 @@ li{
 }
 
 /* End Category pages */
+
+
+
+.message-system {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 5px;
+    background-color: rgba(244, 67, 54, 0.85);
+    width: 470px;
+    padding: 10px;
+    margin-bottom: -50px;
+    margin: 0px auto;
+    margin-top: 70px;
+}

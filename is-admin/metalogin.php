@@ -1,15 +1,25 @@
 <?php
+
 /**
  * @author Sadegh Mahdilou
- * @copyright 2015 
- * @since January 2013 - 2015 December
- * @version 0.7.1
+ * @copyright January 2013 - 2016 November
+ * @since 0.2.0
+ * @version 0.7.2 Beta
+ *
  */
+
 
 ?>
 <?php $title = 'Login'; ?>
 <?php include('header.php'); ?>
 
+<?php 
+if (isset($_GET['message_system']) != NULL) {
+	echo '<div class="row message-system">';
+	echo $_GET['message_system'];
+	echo '</div>';
+} 
+?>
 <div class="row">
 	<div class="form-login">
 		<div>

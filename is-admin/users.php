@@ -20,20 +20,14 @@
 <?php 
 $mu = new user();
 
-$user_info = $mu->user_info($mu->this_user_username());
-if ($mu->get_user_role($user_info['username']) == 'administrator') {
-	$mu->user_capabilities[] = 'admin_bar';
-	$mu->user_capabilities[] = 'dashboard';
-	$mu->user_capabilities[] = 'posts';
-	$mu->user_capabilities[] = 'category';
-	$mu->user_capabilities[] = 'plugins';
-	$mu->user_capabilities[] = 'users';
-	$mu->user_capabilities[] = 'site';
-}
+add_default_cap_to_user();
 
+global $user_info;
 
 if ($mu->check_user_stat() == 'logedout' || $mu->user_can_be($user_info['username'] , 'users') ) {
-	header('Location: metalogin.php');
+	$message_system = 'You can not access to Users page !';
+	session_destroy();
+    header("Location: metalogin.php?message_system=$message_system");
 }
 $cat = new category();
 ?>
@@ -65,7 +59,6 @@ $cat = new category();
 							<li class="col-md-3"><?php echo $key['name'].' '.$key['lastname']; ?></li>
 							<li class="col-md-3"><?php echo $key['email']; ?></li>
 							<li class="col-md-3"><?php echo $mu->get_user_role($key['id']); ?></li>
-							<li class="col-md-3"><?php $mu->is_admin($key['id']); /*$mu->add_user_capabilities($mu->get_user_role($key['id']));*/ ?></li>
 						</ul>
 					</div>
 				<?php endforeach; endif; ?>

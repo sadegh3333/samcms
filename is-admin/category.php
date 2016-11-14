@@ -16,8 +16,15 @@ $title = 'Category';
 include('header.php');
 
 $mu = new user();
-if ($mu->check_user_stat() == 'logedout') {
-	header('Location: metalogin.php');
+
+add_default_cap_to_user();
+
+global $user_info;
+
+if ($mu->check_user_stat() == 'logedout' || $mu->user_can_be($user_info['username'] , 'category') ) {
+	$message_system = 'You can not access to Category page !';
+	session_destroy();
+    header("Location: metalogin.php?message_system=$message_system");
 }
 
 $cat = new category();
@@ -48,7 +55,6 @@ if (isset($_GET['mission']) ) {
 		<!-- Begin part maincenter -->
 		<div class="edit-box">
 			<h3 class="title">Categories</h3>
-			<h4 class="message-system"> <?php if(isset($message_system)) echo $message_system; ?> </h4>
 			<div class="row">
 				
 				<div class="col-xs-8 show-category-box ">

@@ -13,8 +13,14 @@
 
 <?php 
 $mu = new user();
-if ($mu->check_user_stat() == 'logedout') {
-    header('Location: metalogin.php');
+add_default_cap_to_user();
+
+global $user_info;
+
+if ($mu->check_user_stat() == 'logedout' || $mu->user_can_be($user_info['username'] , 'posts') ) {
+    $message_system = 'You can not access to Posts page !';
+    session_destroy();
+    header("Location: metalogin.php?message_system=$message_system");
 }
 
 $cat = new category();

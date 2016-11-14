@@ -15,8 +15,14 @@ $title = 'Plugins';
 include('header.php');
 
 $mu = new user();
-if ($mu->check_user_stat() == 'logedout') {
-	header('Location: metalogin.php');
+add_default_cap_to_user();
+
+global $user_info;
+
+if ($mu->check_user_stat() == 'logedout' || $mu->user_can_be($user_info['username'] , 'plugins') ) {
+	$message_system = 'You can not access to Plugins page !';
+	session_destroy();
+    header("Location: metalogin.php?message_system=$message_system");
 }
 
 
@@ -48,9 +54,7 @@ if (isset($_POST['disable'])) {
 		<!-- Begin part maincenter -->
 		<div class="edit-box">
 			<h3 class="title">Plugins</h3>
-			<h4 class="message-system"> <?php if(isset($message_system)) echo $message_system; ?> </h4>
 			<?php
-			/* print_r($plugins->get_all_plugin_folder());*/
 			$all_plug = $plugins->check_plugin_in_database();
 			$all_plug0 = $plugins->check_plugin_in_folder();
 
