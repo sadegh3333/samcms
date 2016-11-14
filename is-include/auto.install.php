@@ -156,7 +156,8 @@ function install_samcms(){
 		`tel` int(255) NOT NULL,
 		`gender` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
 		`ip` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
-		`logindate` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+		`logindate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+		`role` int(11) NOT NULL
 		) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci");
 
 	// Plugin Table
@@ -172,8 +173,8 @@ function install_samcms(){
 	$dbc->query("INSERT INTO `document` (`id`, `title`, `content`, `category`, `tag`, `author`, `datetime`) VALUES
 		(1, 'Hello World', '<p>Welcome to samcms. This is the first post , you can update it or add new post.</p>', 1, 'samcms , new , update', 'admin', '1478983961');
 		");
-	$dbc->query("INSERT INTO `metauser` (`id`, `name`, `lastname`, `username`, `password`, `email`, `age`, `tel`, `gender`, `ip`, `logindate`) VALUES
-		(1, 'sadegh', 'Mahdilou', 'admin', '356a192b7913b04c54574d18c28d46e6395428ab', 'sadegh3333@gmail.com', 0, 0, '', '', '1478983873');
+	$dbc->query("INSERT INTO `metauser` (`id`, `name`, `lastname`, `username`, `password`, `email`, `age`, `tel`, `gender`, `ip`, `logindate`, `role`) VALUES
+		(1, 'Sadegh', 'Mahdilou', 'admin', '356a192b7913b04c54574d18c28d46e6395428ab', 'sadegh3333@gmail.com', 0, 0, '', '', '1479091550', 100)
 		");
 
 	$dbc->query("ALTER TABLE `category`
