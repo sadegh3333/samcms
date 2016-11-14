@@ -354,3 +354,28 @@ li{
     margin: 0px auto;
     margin-top: 70px;
 }
+
+
+
+/* Begin users */
+.head-title {
+    border-bottom: 1px rgba(221, 221, 221, 0.47) solid;
+    padding: 0px 0px 10px;
+}
+.head-title .big-title {
+    font-size: 24px;
+    padding: 0px 0px 0px 7px;
+    border-left: 5px #ddd solid;
+    border-radius: 5px;
+}
+.head-title .add-new-part {
+    text-align: right;
+    padding: 0px;
+}
+.head-title .add-new-part form {
+    margin:0px; 
+}
+.head-title .add-new-part form input[type="submit"] {
+    font-weight: bold;
+}
+/* End users */

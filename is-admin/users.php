@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright November 2016
  * @since 0.7.2
- * @version 0.2.0 Beta
+ * @version 0.4.0 Beta
  *
  */
 
@@ -27,18 +27,41 @@ global $user_info;
 if ($mu->check_user_stat() == 'logedout' || $mu->user_can_be($user_info['username'] , 'users') ) {
 	$message_system = 'You can not access to Users page !';
 	session_destroy();
-    header("Location: metalogin.php?message_system=$message_system");
+	header("Location: metalogin.php?message_system=$message_system");
 }
 $cat = new category();
 ?>
 
+
+
+<?php 
+
+if (isset($_POST['mission'])) {
+	$mission = $_POST['mission'];
+
+}
+
+
+?>
 <div class="row">
-	<div class="col-xs-2 sidebar">
+	<div class="col-md-2 sidebar">
 		<?php include ('sidebar.php'); ?>
 	</div>
-	<div class="col-xs-10 col-xs-offset-2"> 
+	<div class="col-md-10"> 
 		<div class="edit-box">
-			<h3 class="title"> Users Management  </h3> 
+			<div class="row head-title">
+
+				<div class="col-md-6 big-title">
+					<h3"> Users Management  </h3> 
+				</div>
+				<div class="col-md-6 add-new-part">
+					<form action="" method="POST">
+						<input type="hidden" name="mission" value="add_new_user">
+						<input class="btn btn-success" type="submit" name="add_new_user" value="Add New">
+					</form>
+				</div>	
+			</div>
+
 			<?php
 			$user_list = $mu->get_all_user_list();
 			?>
