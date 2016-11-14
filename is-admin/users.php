@@ -31,9 +31,8 @@ if ($mu->get_user_role($user_info['username']) == 'administrator') {
 	$mu->user_capabilities[] = 'site';
 }
 
-print_r($mu->get_user_capabilities($user_info['username']));
 
-if ($mu->check_user_stat() == 'logedout') {
+if ($mu->check_user_stat() == 'logedout' || $mu->user_can_be($user_info['username'] , 'users') ) {
 	header('Location: metalogin.php');
 }
 $cat = new category();

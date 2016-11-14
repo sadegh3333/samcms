@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2016
  * @since October 2013 - 2016 November
- * @version 0.15.0 Beta
+ * @version 0.16.0 Beta
  */
 
 
@@ -259,5 +259,27 @@ class user
             return false;
         }
     }
+
+
+    /**
+    *   Check user can be. 
+    *
+    *   @Since 0.9.10
+    */
+    public function user_can_be($username , $page){
+
+        $user_cap = $this->get_user_capabilities($username);
+
+        $check = array_search($page, $this->user_capabilities);
+        if ($check == NULL) {
+            return true;
+            echo 'You can access to this page, enjoy it.';
+        }
+        else {
+            return false;
+            echo  "Are you kidding me???!!! You can not access to this page.";
+        }
+    }
+
 }
 ?>
