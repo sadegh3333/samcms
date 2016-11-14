@@ -24,40 +24,40 @@
 						</a>
 					</li>					
 					<li>
+						<?php 
+						/* Check the user can access to admin panel */
+						if ($mu->is_admin($_SESSION['username'])):
+							?>
 						<a class="btn" href="<?php echo Root; ?>/is-admin">
 							Admin Panel
 						</a>
-					</li>
-					<li>
-						<?php do_hook('hello_hook');?>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right ">
-					<li>
-						<a class="btn" href="<?php echo Root; ?>/is-admin/login.php?action=logout"><i class="fa fa-power-off"></i> Logout </a>
-					</li>
-				</ul>
-			<?php else: ?>
-				<ul class="nav navbar-nav navbar-left">
-					<li>
-						<a class="btn" href="<?php echo Root; ?>">
-							Home
-						</a>
-					</li>					
-					<li>
-						<a class="btn" href="<?php echo Root; ?>/is-admin">
-							Admin Panel
-						</a>
-					</li>
-					<li>
-						<?php do_hook('hello_hook');?>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="right">
-						<a class="btn" href="<?php echo Root; ?>/is-admin/metalogin.php">Log-in</a>
-					</li>
-				</ul>
-			<?php endif; ?>
-		</div>
+					<?php endif; ?>
+				</li>
+				<li>
+					<?php do_hook('hello_hook');?>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right ">
+				<li>
+					<a class="btn" href="<?php echo Root; ?>/is-admin/login.php?action=logout"><i class="fa fa-power-off"></i> Logout </a>
+				</li>
+			</ul>
+		<?php else: ?>
+			<ul class="nav navbar-nav navbar-left">
+				<li>
+					<a class="btn" href="<?php echo Root; ?>">
+						Home
+					</a>
+				</li>					
+				<li>
+					<?php do_hook('hello_hook');?>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="right">
+					<a class="btn" href="<?php echo Root; ?>/is-admin/metalogin.php">Log-in</a>
+				</li>
+			</ul>
+		<?php endif; ?>
 	</div>
+</div>
