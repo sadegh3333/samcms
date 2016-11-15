@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2016
  * @since October 2013 - 2016 November
- * @version 0.19.0 Beta
+ * @version 0.20.0 Beta
  */
 
 
@@ -44,18 +44,18 @@ class user
     */
     public function __construct() {
 
-       /* Set user roles default */
-       $this->user_role_list['administrator'] = 100;
-       $this->user_role_list['user'] = 0;
+     /* Set user roles default */
+     $this->user_role_list['administrator'] = 100;
+     $this->user_role_list['user'] = 0;
 
 
 
-       $user = array(
+     $user = array(
         'username' => '',
         'password' => '',
         'state' =>'logout'
         );
-   }
+ }
 
     /**
     *   Login user , check username and password if is correct set a session
@@ -244,13 +244,13 @@ class user
         $user_info =  $this->user_info($username);
 
         if ($user_info['role'] == 100 ) {
-           return true;
-       }
-       else {
-           return false;
-       }
+         return true;
+     }
+     else {
+         return false;
+     }
 
-   }
+ }
 
 
     /**
@@ -317,6 +317,23 @@ class user
 
         if($dbc->query("UPDATE `metauser` SET `name`='$name',`lastname`='$lastname',`username`='$username',`password`='$password',`email`='$email' WHERE `id`='$id'"))
         {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+
+    /**
+    *   Remove Single User
+    *
+    *   @Since 0.11.0
+    */
+    public function remove_single_user($id,$username){
+        global $dbc;
+
+        if ($dbc->query("DELETE FROM `metauser` WHERE `id`='$id'")) {
             return true;
         }
         else {
