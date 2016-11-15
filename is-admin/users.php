@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright November 2016
  * @since 0.7.2
- * @version 0.5.0 Beta
+ * @version 0.6.0 Beta
  *
  */
 
@@ -71,10 +71,16 @@ $cat = new category();
 							<li class="col-md-3"><?php echo $key['name'].' '.$key['lastname']; ?></li>
 							<li class="col-md-3"><?php echo $key['email']; ?></li>
 							<li class="col-md-3"><?php echo $mu->get_user_role($key['username']); ?></li>
-							<form action="user.edit.php" method="GET">
+							<form action="user.edit.php" method="POST">
 								<li class="col-md-3">
-									<input type="hidden" name="edit-user">
-									<input type="hidden" name="user-id" value="<?php echo $key['id']; ?>">
+									<input type="hidden" name="mission" value="goto-edit-user">
+									<input type="hidden" name="id" value="<?php echo $key['id']; ?>">
+									<input type="hidden" name="username" value="<?php echo $key['username']; ?>">
+									<input type="hidden" name="email" value="<?php echo $key['email']; ?>">
+									<input type="hidden" name="name" value="<?php echo $key['name']; ?>">
+									<input type="hidden" name="lastname" value="<?php echo $key['lastname']; ?>">
+
+
 									<input type="submit" name="edit-user" value="Edit" class="btn" >
 								</li>
 							</form>

@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright May 2016 - 2016 November 
  * @since 0.4.0
- * @version 0.3.0 Beta
+ * @version 0.6.0 Beta
  *
  */
 ?>
@@ -57,6 +57,14 @@ if (isset($_POST['mission'])) {
 	</div>
 	<div class="col-md-10"> 
 		<div class="edit-box">
+
+			<div class="msg-sys">
+				<?php 
+				if (!empty($message_system)) {
+					echo $message_system;
+				}
+				?>
+			</div>
 
 			<form action="" method="POST">
 				<div class="row head-title">
