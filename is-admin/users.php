@@ -42,10 +42,10 @@ $cat = new category();
 			<div class="row head-title">
 
 				<div class="col-md-6 big-title">
-					<h3"> Users Management  </h3> 
+					<h3> Users Management  </h3> 
 				</div>
 				<div class="col-md-6 add-new-part">
-						<a href="user.new.php" class="btn btn-success"> Add New </a> 
+					<a href="user.new.php" class="btn btn-success"> Add New </a> 
 				</div>	
 			</div>
 
@@ -71,6 +71,13 @@ $cat = new category();
 							<li class="col-md-3"><?php echo $key['name'].' '.$key['lastname']; ?></li>
 							<li class="col-md-3"><?php echo $key['email']; ?></li>
 							<li class="col-md-3"><?php echo $mu->get_user_role($key['username']); ?></li>
+							<form action="user.edit.php" method="GET">
+								<li class="col-md-3">
+									<input type="hidden" name="edit-user">
+									<input type="hidden" name="user-id" value="<?php echo $key['id']; ?>">
+									<input type="submit" name="edit-user" value="Edit" class="btn" >
+								</li>
+							</form>
 						</ul>
 					</div>
 				<?php endforeach; endif; ?>

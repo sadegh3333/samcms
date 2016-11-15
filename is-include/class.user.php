@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright 2016
  * @since October 2013 - 2016 November
- * @version 0.17.0 Beta
+ * @version 0.18.0 Beta
  */
 
 
@@ -101,15 +101,15 @@ class user
 
         $password = sha1($password);
 
-        if ($dbc->query("INSERT INTO `metauser`
-         (`id`, `name`, `lastname`, `username`, `password`, `email`, `age`, `tel`, `gender`, `ip`, `logindate`, `role`)
-         VALUES(`id`, '', '', '$username', '$password', '$email', 0, 0, '', '', '', 0)")) {
+        if ($dbc->query("INSERT INTO `metauser` (`id`, `name`, `lastname`, `username`, `password`, `email`, `ip`, `last.login`, `role`) VALUES
+            (`id`, '', '', '$username', '$password', '$email', '', '', 0);"))
+        {
             return true;
+        }
+        else {
+            return false;
+        }    
     }
-    else {
-        return false;
-    }    
-}
 
 
     /**
