@@ -41,7 +41,9 @@ if (isset($_POST['mission'])){
 		$username = $_POST['username'];
 
 		if ($id != 1) {
-			$mu->remove_single_user($id,$username);
+			if ($mu->remove_single_user($id,$username)){
+				header('Location: users.php');
+			}
 		}
 
 	}
