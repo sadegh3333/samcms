@@ -1,20 +1,36 @@
 <?php
 
+
 /**
  * @author Sadegh Mahdilou
- * @copyright October 2013 - November 2016
+ * @copyright October 2013 - 2016 November
  * @since 0.2.0
- * @version 0.4.0 Beta
+ * @version 0.6.0 Beta
+ *
  */
+
 
 class document
 {
     var $pstcnt;
 
-    function submit_document($title, $content, $category ,$tag ,$author , $datetime ){
+    /**
+    *   Submit New Document to Table Document
+    *
+    *   @Since 0.2.0
+    */
+    public function submit_document($title, $content, $category ,$tag ,$author , $datetime ){
         global $dbc;
-        $q = $dbc->query("INSERT INTO `document`(id, title, content, category, tag, author, datetime) VALUES (id,'$title','$content','$category','$tag','$author','$datetime') ");
-        echo ('done....!');
+        
+        if($dbc->query("INSERT INTO `document` (`id`, `title`, `content`, `category`, `tag`, `author`, `datetime`) 
+            VALUES (`id`,'$title','$content','$category','$tag','$author','$datetime');"))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+        
     }
     function getpost($id)
     {
@@ -52,6 +68,23 @@ class document
         global $dbc;
         $q = $dbc->query("UPDATE `document` SET  title='$title',content='$content',category='$category',tag='$tag',author='$author',datetime='$datetime' WHERE id='$id'");
         echo('Done...!');
+    }
+
+
+    /**
+    *   Remove single post 
+    *
+    *   @Since 0.12.1
+    */
+    public function remove_single_post($id){
+        global $dbc;
+
+        if ($dbc->query("DELETE FROM `document` WHERE `id`='$id'")) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 

@@ -3,7 +3,7 @@
  * @author Sadegh Mahdilou
  * @copyright October 2013 - 2016 November
  * @since version 0.2.0
- * @version 0.6.0 Beta
+ * @version 0.6.3 Beta
  *
  */
 
@@ -35,6 +35,17 @@ a {
 }
 li{
     list-style: none;
+}
+
+
+.right {
+    text-align: right;
+}
+.left {
+    text-align: left;
+}
+.center {
+    text-align: center;
 }
 
 .header-bar {
@@ -268,120 +279,115 @@ li{
     /*direction: rtl;*/
     height: 50px;
 }
-.title_document:hover {
+/*.title_document:hover {
     background-color: #ececec;
-}
-.title_document ul {
-    list-style: none;
-}
-.title_document ul li {
-    /*float: right;*/
-    padding: 0px 4px;
+    }*/
+    .title_document ul {
+        list-style: none;
+    }
+    .title_document ul li {
+        padding: 0px 4px;
+    }
 
-}
-.title_document li:nth-child(3) a{
-    color: rgb(5, 105, 0);
-}
-
-.title_document form {
-    display: inline-block;
-}
-.title_document_header{
-    font-weight: bold;
-    padding: 6px;
-    border-bottom: #C1C1C1 1px solid;
-    border-left: 1px #eee solid;
-    border-right: 1px #eee solid;
-    /*direction: rtl;*/
-    /*    height: 40px;*/
-}
-.title_document_header ul li{
-    /*float: right;*/
-}
-.title_document_inside {
-    border-bottom: 1px #eee solid;
-    padding-bottom: 7px;
-}
-/* End post and edit post */
+    .title_document form {
+        display: inline-block;
+    }
+    .title_document_header{
+        font-weight: bold;
+        padding: 6px;
+        border-bottom: #C1C1C1 1px solid;
+        border-left: 1px #eee solid;
+        border-right: 1px #eee solid;
+        /*direction: rtl;*/
+        /*    height: 40px;*/
+    }
+    .title_document_header ul li{
+        /*float: right;*/
+    }
+    .title_document_inside {
+        border-bottom: 1px #eee solid;
+        padding-bottom: 7px;
+    }
+    /* End post and edit post */
 
 
 
-/* Begin Category pages */
-.title-category {
-    border: 1px #eee solid;
-    padding: 6px 6px;
-}
+    /* Begin Category pages */
+    .title-category {
+        border: 1px #eee solid;
+        padding: 6px 6px;
+    }
 
-.box-add-category {
-    border-left: 1px #eee solid;
-    height: 100%;
-}
-.show-category-box{
+    .box-add-category {
+        border-left: 1px #eee solid;
+        height: 100%;
+    }
+    .show-category-box{
 
-}
+    }
 
-.show-category-box{
-    border: 1px #eee solid;
-}
-.show-box-title-category{
-    padding: 10px;
-    border-bottom:1px #eee solid; 
-}
-.show-box-title-category div{
-    border-right: 1px #eee solid;
-    margin-right: 1px; 
-}
-.show-box-title-category div:last-child{
-    border-right: none;
-}
-.show-category-box li {
-    padding: 10px;
-}
-.show-category-box li:nth-child(odd){
-    background-color: #eee;
-}
+    .show-category-box{
+        border: 1px #eee solid;
+    }
+    .show-box-title-category{
+        padding: 10px;
+        border-bottom:1px #eee solid; 
+    }
+    .show-box-title-category div{
+        border-right: 1px #eee solid;
+        margin-right: 1px; 
+    }
+    .show-box-title-category div:last-child{
+        border-right: none;
+    }
+    .show-category-box li {
+        padding: 10px;
+    }
+    .show-category-box li:nth-child(odd){
+        background-color: #eee;
+    }
 
-/* End Category pages */
-
-
-
-.message-system {
-    text-align: center;
-    font-size: 15px;
-    color: black;
-    font-weight: 700;
-    letter-spacing: 5px;
-    background-color: rgba(244, 67, 54, 0.85);
-    width: 470px;
-    padding: 10px;
-    margin-bottom: -50px;
-    margin: 0px auto;
-    margin-top: 70px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 1px red;
-}
+    /* End Category pages */
 
 
 
-/* Begin users */
-.head-title {
-    border-bottom: 1px rgba(221, 221, 221, 0.47) solid;
-    padding: 0px 0px 10px;
-}
-.head-title .big-title {
-    font-size: 24px;
-    padding: 0px 0px 0px 7px;
-    border-left: 5px #ddd solid;
-    border-radius: 5px;
-}
-.head-title .add-new-part {
-    text-align: right;
-    padding: 0px;
-}
-.head-title .add-new-part form {
-    margin:0px; 
-}
-.head-title .add-new-part form input[type="submit"] {
-    font-weight: bold;
-}
+    .message-system {
+        text-align: center;
+        font-size: 15px;
+        color: black;
+        font-weight: 700;
+        letter-spacing: 5px;
+        background-color: rgba(244, 67, 54, 0.85);
+        width: 470px;
+        padding: 10px;
+        margin-bottom: -50px;
+        margin: 0px auto;
+        margin-top: 70px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 1px red;
+    }
+
+
+
+    /* Begin users */
+    .head-title {
+        border-bottom: 1px rgba(221, 221, 221, 0.47) solid;
+        padding: 0px 0px 10px;
+    }
+    .head-title .big-title {
+        font-size: 24px;
+        padding: 0px 0px 0px 7px;
+        border-left: 5px #ddd solid;
+        border-radius: 5px;
+    }
+    .head-title .add-new-part {
+        text-align: right;
+        padding: 0px;
+    }
+    .head-title .add-new-part form {
+        margin:0px; 
+    }
+    .head-title .add-new-part form input[type="submit"] {
+        font-weight: bold;
+    }
 /* End users */
