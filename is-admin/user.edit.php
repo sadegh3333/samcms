@@ -4,7 +4,7 @@
  * @author Sadegh Mahdilou
  * @copyright November 2016 
  * @since 0.10.2
- * @version 0.2.0 Beta
+ * @version 0.3.0 Beta
  *
  */
 ?>

@@ -14,7 +14,7 @@
 */
 
 /* Version Stats */
-$samcms_version = '0.10.6';
+$samcms_version = '0.11.0';
 $channel_release = 'Beta';
 $code_name = 'Rasmus Lerdorf';
 $link_code_name = 'https://en.wikipedia.org/wiki/Rasmus_Lerdorf';
